@@ -1,0 +1,206 @@
+#======================================================================
+# GITIGNORE - CodeIgniter Project (Enhanced Best Practices)
+#======================================================================
+
+#-------------------------
+# Operating System Junk Files
+#-------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux / Unix
+*~
+.directory
+.Trash-*
+
+#-------------------------
+# Environment Files & Secrets
+#-------------------------
+.env
+.env.*
+.vagrant
+Vagrantfile
+.env.backup
+*.env.local
+*.env.production
+*.env.testing
+*.env.example # Optional: include only if it contains sensitive defaults
+
+# Docker / Containers
+.docker/
+docker-compose*.yml
+Dockerfile
+docker-compose.override.yml
+
+#-------------------------
+# Application Writable Folders
+#-------------------------
+writable/cache/*
+!writable/cache/index.html
+
+writable/logs/*
+!writable/logs/index.html
+
+writable/session/*
+!writable/session/index.html
+
+writable/uploads/*
+!writable/uploads/index.html
+
+writable/debugbar/*
+!writable/debugbar/index.html
+
+php_errors.log
+error_log
+*.log
+
+#-------------------------
+# CodeIgniter Specific Files
+#-------------------------
+user_guide_src/build/*
+user_guide_src/cilexer/build/*
+user_guide_src/cilexer/dist/*
+user_guide_src/cilexer/pycilexer.egg-info/*
+tests/coverage*
+phpunit
+/results/
+phpunit*.xml
+.phpunit.result.cache
+
+#-------------------------
+# Composer Dependencies
+#-------------------------
+vendor/
+composer.lock
+composer.phar
+
+#-------------------------
+# Node / Frontend (if using npm, webpack, mix, vite, etc.)
+#-------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+vite.config.*
+webpack.mix.js
+mix-manifest.json
+public/hot
+public/storage
+dist/
+build/
+.cache/
+.eslintcache
+
+#-------------------------
+# IDE / Editor / Tooling Files
+#-------------------------
+
+# JetBrains (PhpStorm, IntelliJ, WebStorm)
+.idea/
+*.iml
+
+# NetBeans
+/nbproject/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/nbactions.xml
+/nb-configuration.xml
+/.nb-gradle/
+
+# Visual Studio Code
+.vscode/
+.history/
+.code-workspace
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+.phpintel
+
+# Eclipse
+.project
+.buildpath
+.settings/
+
+# Other editors
+*.komodoproject
+*.sublime-settings
+*.kate-swp
+
+#-------------------------
+# Miscellaneous Dev / Tooling
+#-------------------------
+
+# Local tooling or helper scripts
+_modules/*
+_tools/
+scripts/local/*
+tmp/
+temp/
+.cache/
+coverage/
+
+# PHPStan / Psalm / PHP-CS-Fixer cache
+.php-cs-fixer.cache
+phpstan.neon
+phpstan.neon.dist
+psalm.xml
+psalm.xml.dist
+
+#-------------------------
+# System / CI-CD / Deployment
+#-------------------------
+.deploy/
+.deployignore
+.env.production
+.env.staging
+.gitlab-ci.yml
+.github/
+.DS_Store
+*.bak
+*.swp
+*.orig
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.old
+*.save
+*.backup
+
+#-------------------------
+# Optional: Ignore API test directories (if used locally)
+#-------------------------
+/api/
+/tests/tmp/
+/docs/build/
+/storage/debugbar/
+
+#======================================================================
+# END OF FILE
+#======================================================================

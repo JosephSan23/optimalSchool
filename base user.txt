@@ -1,0 +1,26 @@
+CREATE TABLE perfil
+(
+    id_perfil int AUTO_INCREMENT PRIMARY KEY,
+    descripcion_perfil varchar(20)
+);
+INSERT INTO perfil VALUES(1, 'Administrador'),(2, 'Secretaria'),(3, 'Vendedor');
+
+CREATE TABLE usuario
+(
+    id_usuario int PRIMARY KEY AUTO_INCREMENT,
+    nombre_usu varchar(40),
+    pass_usuario varchar(40),
+    id_perfil int,
+    ced_empleado int,
+    FOREIGN KEY (id_perfil) REFERENCES perfil (id_perfil),
+    FOREIGN KEY (ced_empleado) REFERENCES empleados (ced_empleado)
+);
+INSERT INTO usuario VALUES (null, 'pepe1','1pepe',1, 1234567);
+
+
+
+
+
+
+
+
