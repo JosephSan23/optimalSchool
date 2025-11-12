@@ -21,9 +21,9 @@
         <aside class="dash-sidebar">
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="<?php echo base_url('admin') ?>">Inicio</a></li>
                     <li><a href="#">Postulantes</a></li>
-                    <li><a href="#">Estudiantes</a></li>
+                    <li><a href="<?php echo base_url('admin/estudiantes') ?>">Estudiantes</a></li>
                     <li><a href="#">Profesores</a></li>
                     <li><a href="#">Acudientes</a></li>
                     <li><a href="#">Cursos</a></li>
