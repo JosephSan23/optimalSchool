@@ -71,9 +71,10 @@
                 <option value="inactivo">Inactivo</option>
             </select>
         </div>
-
-        <label for="fecha_ingreso">Fecha de ingreso</label>
-        <input type="date" name="fecha_ingreso" required>
+        <div class="form-grupo">
+            <label for="fecha_ingreso">Fecha de ingreso</label>
+            <input type="date" name="fecha_ingreso" required>
+        </div>
 
         <button type="submit" class="btn-guardar">Guardar Estudiante</button>
     </form>

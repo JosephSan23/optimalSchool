@@ -35,7 +35,6 @@ class EstudianteController extends Controller
     {
         $data['colegios'] = $this->colegioModel->findAll();
 
-        echo view('admin/header');
         echo view('admin/secciones/crear_estudiante', $data);
         // echo view('admin/footer');
     }
@@ -79,10 +78,62 @@ class EstudianteController extends Controller
         return redirect()->to(base_url('admin/estudiantes'))->with('success', 'Estudiante creado correctamente.');
     }
 
+    public function editar($id)
+    {
+        $data['estudiante'] = $this->estudianteModel->obtenerEstudiantePorId($id);
+
+        if(!$data['estudiante']) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Estudiante no encontrado');
+        }
+
+        echo view('admin/secciones/editar_estudiante', $data);
+    }
+
+    public function actualizar($id)
+    {
+        $datos = $this->request->getPost();
+
+        $usuarioData = [
+            'primer_nombre' => $datos['primer_nombre'],
+            'segundo_nombre' => $datos['segundo_nombre'] ?? null,
+            'primer_apellido' => $datos['primer_apellido'],
+            'segundo_apellido' => $datos['segundo_apellido'] ?? null,
+            'tipo_documento' => $datos['tipo_documento'],
+            'documento' => $datos['documento'],
+            'correo' => $datos['correo'],
+            'telefono' => $datos['telefono'],
+            'direccion' => $datos['direccion'],
+            'fecha_nacimiento' => $datos['fecha_nacimiento'],
+        ];
+
+        $estudianteData = [
+            'fecha_ingreso' => $datos['fecha_ingreso'],
+            'estado' => $datos['estado']
+        ];
+
+        $resultado = $this->estudianteModel->actualizarEstudianteCompleto($id, $usuarioData, $estudianteData);
+
+        if (!$resultado) {
+            return redirect()->back()->with('error', 'Error al actualizar el estudiante.');
+        }
+
+        return redirect()->to(base_url('admin/estudiantes'))
+                ->with('success', 'Estudiante actualizado correctamente.');
+
+
+
+    }
+
     // 📙 Eliminar estudiante
     public function eliminar($id)
     {
-        $this->estudianteModel->delete($id);
-        return redirect()->to(base_url('admin/estudiantes'))->with('success', 'Estudiante eliminado correctamente.');
+        $resultado = $this->estudianteModel->eliminarEstudiante($id);
+
+        if (!$resultado) {
+            return redirect()->back()->with('error', 'Error al eliminar el estudiante.');
+        }
+
+        return redirect()->to(base_url('admin/estudiantes'))
+                ->with('success', 'Estudiante eliminado correctamemente.');
     }
 }
