@@ -1,0 +1,630 @@
+/* Definimos las variables que usaremos en el CSS */
+:root {
+    --primary: #063659;
+    /* Azul principal */
+    --dark: #1C2730;
+    /* Azul/negro oscuro */
+    --muted: #D9D9D9;
+    /* Gris claro */
+    --accent: #E8BB27;
+    /* Amarillo */
+    --white: #ffffff;
+    /*Color Azul claro */
+    --azulito: #2476b0;
+
+    --radius: 8px;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: var(--azulito);
+    padding: 8px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+section {
+    scroll-margin-top: 96px;
+}
+
+/* Logo a la izquierda */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 80px;
+    width: 90px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Menú + botón juntos */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+
+/* Botón login y registro */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.separator {
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.boton {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    /* si usas <a> */
+}
+
+/* Botón primario → Iniciar sesion */
+.boton-primario {
+    background-color: #2a5d84;
+    color: #fff;
+    border: 2px solid #2a5d84;
+}
+
+.boton-primario:hover {
+    background-color: #fff;
+    color: var(--azulito);
+    border-color: #fff;
+}
+
+/* Estilos para el Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    background-color: #f8f9fa;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--azulito);
+    padding: 12px 24px;
+    border: 2px solid var(--azulito);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3 ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--azulito);
+    color: #fff;
+}
+
+.hero img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Apartado de beneficios */
+.beneficios {
+    padding: 30px 20px 80px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.beneficios h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.beneficios-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.beneficio {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3px;
+    transition: transform 0.3 ease, box-shadow 0.3 ease;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.beneficio img.icono {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 52px;
+    border-radius: 10px;
+    display: block;
+    padding: 8px;
+    background: rgba(76, 150, 203, 0.10);
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.beneficio h3 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.beneficio p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Apartado de confianza */
+.confianza {
+    background: #ffffff;
+    padding: 20px 20px;
+}
+
+.confianza-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 36px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.confianza-texto {
+    flex: 1;
+}
+
+.confianza h2 {
+    font-size: 1.9rem;
+    color: #1C2730;
+    margin-bottom: 12px;
+    line-height: 1.12;
+}
+
+.confianza .lead {
+    color: #4a5560;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.valores-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.valores-list li {
+    display: flex;
+    flex-direction: column;
+    background: #f7fbfe;
+    border-left: 4px solid var(--azulito);
+    padding: 12px 14px;
+    border-radius: var(--radius);
+}
+
+.valores-list li strong {
+    color: #123348;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+}
+
+.valores-list li span {
+    color: #55606a;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.confianza-media img {
+    margin: 20px auto 0;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(10, 20, 30, 0.06);
+}
+
+/* Planes */
+.planes {
+    background: #f7fbfe;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.planes-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.planes h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #1c2730;
+}
+
+.planes .lead {
+    color: #4a5560;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.plan.unico {
+    background: #fff;
+    border: 2px solid var(--azulito);
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2 ease, box-shadow 0.2 ease;
+}
+
+.plan.unico:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.plan.unico h3 {
+    font-size: 1.6rem;
+    color: #123348;
+    margin-bottom: 10px;
+}
+
+.plan.unico .precio {
+    font-size: 2rem;
+    color: var(--azulito);
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.plan.unico ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    text-align: left;
+}
+
+.plan.unico ul li {
+    margin-bottom: 12px;
+    color: #4a5560;
+    font-size: 0.95rem;
+}
+
+.btn-adquirir {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 26px;
+    background: #4c96cb;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.3 ease;
+}
+
+.btn-adquirir:hover {
+    background: #3b7aa5;
+
+}
+
+.contacto {
+    background: #f8f9fa;
+    padding: 60px 20px;
+}
+
+.contacto-contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto .lead {
+    font-size: 1.05rem;
+    color: #4a5560;
+    margin-bottom: 30px;
+}
+
+.contacto-formulario {
+    text-align: left;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.btn-enviar {
+    background: #4c96cb;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3 ease;
+}
+
+.btn-enviar:hover {
+    background: #3b7aa5;
+}
+
+.contacto-whatsapp {
+    margin-top: 25px;
+}
+
+.contacto-whatsapp p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.icono-whatsapp img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.icono-whatsapp img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary);
+    color: #fff;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 4px 0;
+    color: #ccc;
+}
+
+.footer-contacto p {
+    margin: 3px 0;
+    color: #ccc;
+}
+
+.footer-legal {
+    margin-top: 10px;
+}
+
+.footer-legal a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 4px;
+    font-size: 0.85rem;
+}
+
+.footer-legal a:hover {
+    color: var(--azulito);
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-social a img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Media Queiries */
+
+
+/* Tablets y pantallas medianas */
+@media (max-width: 900px) {
+
+    /* Header */
+    .nav-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-login {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+
+    /* Beneficios */
+    .beneficio {
+        max-width: 100%;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 600px) {
+
+    /* Ajuste de tipografía */
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .beneficios h2 {
+        font-size: 1.5rem;
+    }
+
+    .beneficio h3 {
+        font-size: 1.1rem;
+    }
+
+    .beneficio p {
+        font-size: 0.9rem;
+    }
+}
