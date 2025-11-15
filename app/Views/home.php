@@ -25,7 +25,7 @@
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="./formulario-inicio-sesion/sesion.html" class="boton-primario boton">Iniciar sesión</a>
+                <a href="<?php echo base_url('/login') ?>" class="boton-primario boton">Iniciar sesión</a>
             </div>
         </div>
     </header>

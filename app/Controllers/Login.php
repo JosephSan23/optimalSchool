@@ -8,7 +8,7 @@ class Login extends BaseController
 {
     public function index()
     {
-        return view('pagina/login');
+        return view('/login');
     }
 
     public function acceder()
