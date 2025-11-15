@@ -24,7 +24,7 @@ body {
 }
 
 .login-image {
-    flex: 1;
+    flex: 3;
     background-image: url(../img/home/log/fondo.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,7 +33,7 @@ body {
 }
 
 .login-box {
-    flex: 1;
+    flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,16 +78,61 @@ select {
     width: 100%;
 }
 
-/* --- NUEVO: Estilo para Rol + Colegio juntos --- */
+/* Agrupa input + ícono */
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+/* Ícono PNG dentro del input */
+.input-group .input-icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 55%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: .7;
+}
+
+/* Inputs */
+.input-group input {
+    width: 100%;
+    padding: 10px 12px 10px 42px;
+    /* espacio para el ícono */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #003c71;
+    box-shadow: 0 0 0 3px rgba(0, 60, 113, 0.15);
+    outline: none;
+}
+
+/* Selects normales sin íconos */
+.input-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+/* Inputs lado a lado */
 .row-inputs {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 8px;
 }
 
 .row-inputs .input-group {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 button {

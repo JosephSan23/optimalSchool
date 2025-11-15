@@ -20,14 +20,22 @@
                 <h2>Iniciar Sesión</h2>
 
                 <form>
+                    <!-- EMAIL -->
                     <label for="email">Correo Electrónico</label>
-                    <input type="text" id="email" placeholder="Ingresa tu correo/usuario">
+                    <div class="input-group">
+                        <img src="<?php echo base_url('assets/img/home/log/usuario.png') ?>" class="input-icon">
+                        <input type="text" id="email" placeholder="Ingresa tu correo/usuario">
+                    </div>
 
+                    <!-- PASSWORD -->
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña">
+                    <div class="input-group">
+                        <img src="<?php echo base_url('assets/img/home/log/candado.png') ?>" class="input-icon">
+                        <input type="password" id="password" placeholder="Ingresa tu contraseña">
+                    </div>
 
-                    <!-- Contenedor conjunto Rol + Colegio -->
                     <div class="row-inputs">
+
                         <div class="input-group">
                             <label for="rol">Rol</label>
                             <select id="rol">
@@ -48,8 +56,8 @@
                                 <option value="3">La Salle</option>
                             </select>
                         </div>
-                    </div>
 
+                    </div>
                     <button type="submit">Iniciar sesión</button>
                 </form>
             </div>
