@@ -19,28 +19,30 @@
             <div class="login-content">
                 <h2>Iniciar Sesión</h2>
 
-                <form>
+                <form method="post" action="<?php echo base_url('login') ?>">
                     <!-- EMAIL -->
                     <label for="email">Correo Electrónico</label>
                     <div class="input-group">
                         <img src="<?php echo base_url('assets/img/home/log/usuario.png') ?>" class="input-icon">
-                        <input type="text" id="email" placeholder="Ingresa tu correo/usuario">
+                        <input type="text" id="email" name="correo_usuario" placeholder="Ingresa tu correo/usuario"
+                            required>
                     </div>
 
                     <!-- PASSWORD -->
                     <label for="password">Contraseña</label>
                     <div class="input-group">
                         <img src="<?php echo base_url('assets/img/home/log/candado.png') ?>" class="input-icon">
-                        <input type="password" id="password" placeholder="Ingresa tu contraseña">
+                        <input type="password" id="password" name="contrasena" placeholder="Ingresa tu contraseña"
+                            required>
                     </div>
 
                     <div class="row-inputs">
 
                         <div class="input-group">
                             <label for="rol">Rol</label>
-                            <select id="rol">
+                            <select id="rol" name="rol" required>
                                 <option value="">Selecciona tu rol</option>
-                                <option value="admin">Administrador</option>
+                                <option value="administrador">Administrador</option>
                                 <option value="profesor">Profesor</option>
                                 <option value="estudiante">Estudiante</option>
                                 <option value="acudiente">Acudiente</option>
@@ -49,7 +51,7 @@
 
                         <div class="input-group">
                             <label for="colegio">Colegio</label>
-                            <select id="colegio">
+                            <select id="colegio" name="colegio" required>
                                 <option value="">Selecciona tu colegio</option>
                                 <option value="1">San Gabriel</option>
                                 <option value="2">Los Pinos</option>
@@ -58,8 +60,10 @@
                         </div>
 
                     </div>
+
                     <button type="submit">Iniciar sesión</button>
                 </form>
+
             </div>
         </div>
     </div>

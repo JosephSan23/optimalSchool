@@ -20,36 +20,31 @@ class LoginController extends Controller
         $rol = $this->request->getPost('rol');
         $colegio = $this->request->getPost('colegio');
 
-        // Buscar el usuario por correo o nombre de usuario
+        // Buscar usuario por correo o username
         $usuario = $usuarioModel
+            ->where('rol', $rol)
+            ->where('colegio_id', $colegio)
             ->groupStart()
                 ->where('correo', $correoUsuario)
-                ->orWhere('usuario', $correoUsuario)
+                ->orWhere('username', $correoUsuario)
             ->groupEnd()
             ->first();
 
-        if (!$usuario) 
-        {
+        if (!$usuario) {
             return redirect()->back()->with('error', 'Usuario no encontrado.');
         }
 
-        // verificar contraseña
-        if(!password_verify($password, $usuario['contrasena'])) {
+        // Contraseña sin encriptar
+        if ($password !== $usuario['contrasena']) {
             return redirect()->back()->with('error', 'Contraseña incorrecta.');
         }
 
-        // verificar rol
-        if($usuario['rol'] !== $rol)
-        {
-            return redirect()->back()->with('error', 'El rol seleccionado no coincide');
+        // Verificar colegio
+        if ($usuario['colegio_id'] != $colegio) {
+            return redirect()->back()->with('error', 'No pertenece a este colegio.');
         }
 
-        if($usuario['colegio'] !== $colegio)
-        {
-            return redirect()->back()->with('error', 'No pertenece a este colegio');
-        }
-
-        // crear sesion
+        // Crear sesión
         $sessionData = [
             'id_usuario' => $usuario['id_usuario'],
             'nombre' => $usuario['primer_nombre'],
@@ -59,10 +54,10 @@ class LoginController extends Controller
         ];
 
         $session->set($sessionData);
-        
-        // Redirigir segun rol
+
+        // Redirigir según rol
         switch ($usuario['rol']) {
-            case 'admin':
+            case 'administrador':
                 return redirect()->to('/admin');
             case 'profesor':
                 return redirect()->to('/profesor');
@@ -70,11 +65,9 @@ class LoginController extends Controller
                 return redirect()->to('/estudiante');
             case 'acudiente':
                 return redirect()->to('/acudiente');
-
             default:
                 return redirect()->to('/login')->with('error', 'Rol no reconocido.');
         }
-
     }
 
     public function logout()

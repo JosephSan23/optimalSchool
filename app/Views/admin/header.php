@@ -13,7 +13,7 @@
         <h1 class="titulo dash">Panel del Administrador</h1>
         <div class="usuario-info">
             <span>Admin: Juan Pérez</span>
-            <a href="#" class="btn-logout">Cerrar Sesión</a>
+            <a href="<?php echo base_url('logout') ?>" class="btn-logout">Cerrar Sesión</a>
         </div>
     </header>
 
