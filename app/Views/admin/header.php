@@ -16,18 +16,17 @@
 
         <div class="brand">
             <img src="<?= base_url('assets/img/logoOptimalSchool-sinFondo.png') ?>" alt="Logo" class="brand-logo">
-            <h2 class="admin-title">School Manager</h2>
+            <h2 class="admin-title">Bienvenido</h2>
         </div>
 
         <div class="usuario-info">
-            <img src="<?= base_url('assets/img/user.png') ?>" class="avatar" alt="avatar">
 
             <div class="user-text">
                 <span>Juan Pérez</span>
                 <small>Administrador</small>
             </div>
 
-            <a href="<?= base_url('logout') ?>" class="btn-logout">Salir</a>
+            <a href="<?= base_url('logout') ?>" class="btn-logout">Cerrar Sesion</a>
         </div>
 
     </header>

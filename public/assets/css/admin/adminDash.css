@@ -25,10 +25,18 @@ body {
     height: 70px;
     background: #ffffff;
     padding: 0 25px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 250px;
+    /* corre el header para que no se meta en el sidebar */
+    width: calc(100% - 250px);
+    /* ocupa todo el ancho disponible */
+    z-index: 1000;
 }
 
 /*Logo+nombre*/
@@ -57,13 +65,6 @@ body {
     gap: 15px;
 }
 
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 .user-text span {
     font-size: 15px;
     font-weight: 600;
@@ -88,4 +89,84 @@ body {
 
 .btn-logout:hover {
     background: #e04343;
+}
+
+
+
+
+/* GLOBALES REUTILIZABLES*/
+.flex.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-dark {
+    background-color: #0a1e33;
+}
+
+
+/*SideBar*/
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #0a1e33;
+    color: white;
+    padding: 20px 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo {
+    width: 40px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 18px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background-color: #133a5e;
+}
+
+.main {
+    margin-left: 250px;
+    /* espacio del sidebar */
+    margin-top: 70px;
+    /* espacio del header fijo */
+}
+
+.content {
+    padding: 20px;
 }
