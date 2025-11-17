@@ -22,8 +22,6 @@ class LoginController extends Controller
 
         // Buscar usuario por correo o username
         $usuario = $usuarioModel
-            ->where('rol', $rol)
-            ->where('colegio_id', $colegio)
             ->groupStart()
                 ->where('correo', $correoUsuario)
                 ->orWhere('username', $correoUsuario)
@@ -31,17 +29,21 @@ class LoginController extends Controller
             ->first();
 
         if (!$usuario) {
-            return redirect()->back()->with('error', 'Usuario no encontrado.');
+            return redirect()->to('/login')->with('error', 'Usuario no encontrado.');
         }
 
         // Contraseña sin encriptar
         if ($password !== $usuario['contrasena']) {
-            return redirect()->back()->with('error', 'Contraseña incorrecta.');
+            return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
+        }
+
+        if ($usuario['rol'] != $rol) {
+            return redirect()->to('/login')->with('error', 'Rol no coincide.');
         }
 
         // Verificar colegio
         if ($usuario['colegio_id'] != $colegio) {
-            return redirect()->back()->with('error', 'No pertenece a este colegio.');
+            return redirect()->to('/login')->with('error', 'No pertenece a este colegio.');
         }
 
         // Crear sesión

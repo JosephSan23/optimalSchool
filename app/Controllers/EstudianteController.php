@@ -8,6 +8,7 @@ use CodeIgniter\Controller;
 
 class EstudianteController extends Controller
 {
+    
     protected $estudianteModel;
     protected $colegioModel;
 

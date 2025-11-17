@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/login.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/login.css?v=' . time()) ?>">
 </head>
 
 <body>
@@ -20,6 +20,13 @@
                 <h2>Iniciar Sesión</h2>
 
                 <form method="post" action="<?php echo base_url('login') ?>">
+
+                    <?php if(session()->getFlashdata('error')): ?>
+                    <div class="alerta-error">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                    <?php endif; ?>
+
                     <!-- EMAIL -->
                     <label for="email">Correo Electrónico</label>
                     <div class="input-group">

@@ -149,3 +149,14 @@ button {
 button:hover {
     background-color: #2476b0;
 }
+
+/* alerta error */
+.alerta-error {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
