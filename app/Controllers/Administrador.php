@@ -15,8 +15,8 @@ class Administrador extends BaseController
     }
     public function index()
     {
-        return view('admin/header').
-               view('admin/inicio');
+        return view('admin/header');
+                
     }
 }
 ?>
