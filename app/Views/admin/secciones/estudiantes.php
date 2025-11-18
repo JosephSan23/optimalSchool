@@ -1,4 +1,10 @@
-<link rel="stylesheet" href="<?=  base_url('css/admin/crud.css') ?>">
+<?= $this->extend('admin/layout') ?>
+
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="<?=  base_url('assets/css/admin/crud.css') ?>">
+<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
 
 <div class="content-box">
 
@@ -18,6 +24,7 @@
                     <th>Primer Nombre</th>
                     <th>Primer Apellido</th>
                     <th>Documento</th>
+                    <th>Usuario</th>
                     <th>Correo</th>
                     <th>Teléfono</th>
                     <th>Estado</th>
@@ -33,7 +40,7 @@
                     <td><?= esc($e['primer_nombre']); ?></td>
                     <td><?= esc($e['primer_apellido']); ?></td>
                     <td><?= esc($e['documento']); ?></td>
-                    <td><?= esc($e['nombre_usuario']); ?></td>
+                    <td><?= esc($e['username']); ?></td>
                     <td><?= esc($e['correo']); ?></td>
                     <td><?= esc($e['telefono']); ?></td>
 
@@ -64,3 +71,5 @@
     </div>
 
 </div>
+
+<?= $this->endSection() ?>

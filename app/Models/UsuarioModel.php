@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class UsuarioModel extends Model {
     protected $table = 'usuario';
     protected $primaryKey = 'id_usuario';
-    protected $allowedFields = ['id_usuario', 'colegio_id','rol', 'primer_nombre', 'segundo_nombre', 'primer_apellido', 'segundo_apellido', 'tipo_documento', 'documento', 'correo', 'telefono', 'direccion', 'fecha_nacimiento', 'contrasena'];
+    protected $allowedFields = ['id_usuario', 'colegio_id','rol', 'primer_nombre', 'segundo_nombre', 'primer_apellido', 'segundo_apellido', 'tipo_documento', 'documento', 'username', 'correo', 'telefono', 'direccion', 'fecha_nacimiento', 'contrasena'];
 
     // obtener usuario por ID
     public function obtenerPorId($id) {

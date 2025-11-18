@@ -1,36 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
+<header class="dash-header">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel del Administrador</title>
+    <div class="brand">
+        <img src="<?= base_url('assets/img/logoOptimalSchool-sinFondo.png') ?>" alt="Logo" class="brand-logo">
+        <h2 class="admin-title">Bienvenido</h2>
+    </div>
 
-    <!-- CSS del dashboard -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/admin/adminDash.css') ?>">
-</head>
+    <div class="usuario-info">
 
-<body>
-
-    <header class="dash-header">
-
-        <div class="brand">
-            <img src="<?= base_url('assets/img/logoOptimalSchool-sinFondo.png') ?>" alt="Logo" class="brand-logo">
-            <h2 class="admin-title">Bienvenido</h2>
+        <div class="user-text">
+            <span>Juan Pérez</span>
+            <small>Administrador</small>
         </div>
 
-        <div class="usuario-info">
+        <a href="<?= base_url('logout') ?>" class="btn-logout">Cerrar Sesion</a>
+    </div>
 
-            <div class="user-text">
-                <span>Juan Pérez</span>
-                <small>Administrador</small>
-            </div>
-
-            <a href="<?= base_url('logout') ?>" class="btn-logout">Cerrar Sesion</a>
-        </div>
-
-    </header>
-
-</body>
-
-</html>
+</header>
