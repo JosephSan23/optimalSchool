@@ -45,6 +45,11 @@
         </div>
 
         <div class="form-grupo">
+            <label>Usuario:</label>
+            <input type="email" name="username" required>
+        </div>
+
+        <div class="form-grupo">
             <label>Correo:</label>
             <input type="email" name="correo" required>
         </div>
