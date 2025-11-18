@@ -1,0 +1,81 @@
+.content-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin-left: 80px;
+}
+
+.linea {
+    margin: 15px 0;
+}
+
+.alert-error {
+    background: #ffdddd;
+    color: #b30000;
+    padding: 10px;
+    border-left: 4px solid #b30000;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.formulario {
+    margin-top: 15px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grupo label {
+    margin-bottom: 5px;
+    color: #063659;
+    font-weight: 600;
+}
+
+.form-grupo input,
+.form-grupo select {
+    padding: 7px 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-size: 13px;
+    background: #fafafa;
+    height: 35px;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+    border-color: #2476b0;
+    outline: none;
+    background: #fff;
+}
+
+.contenedor-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-guardar {
+    background: #063659;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+    width: auto;
+}
+
+.btn-guardar:hover {
+    background: #2476b0;
+}
