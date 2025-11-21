@@ -89,8 +89,9 @@
 
 
 
-            <!-- BOTÓN DENTRO DEL GRID COMO EN CREAR -->
-            <button type="submit" class="btn-guardar btn-small">Actualizar</button>
+            <div class="contenedor-btn">
+                <button type="submit" class="btn-guardar">Actualizar</button>
+            </div>
 
         </div>
 
