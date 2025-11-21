@@ -23,7 +23,7 @@ class Profesor extends Controller
         $data['profesores'] = $this->profesorModel->obtenerProfesores($colegio_id);
 
         echo view('admin/header');
-        echo view('admin/profesor/index', $data);
+        echo view('admin/secciones/crud/profesor/profesores', $data);
     }
 
     public function crear()
@@ -31,7 +31,7 @@ class Profesor extends Controller
         $data['colegios'] = $this->colegioModel->findAll();
 
         echo view('admin/header');
-        echo view('admin/profesor/crear', $data);
+        echo view('admin/secciones/crud/profesor/crear', $data);
     }
 
     public function guardar()
@@ -82,7 +82,7 @@ class Profesor extends Controller
         }
 
         echo view('admin/header');
-        echo view('admin/profesor/editar', $data);
+        echo view('admin/secciones/crud/profesor/editar', $data);
     }
 
     public function actualizar($id)
