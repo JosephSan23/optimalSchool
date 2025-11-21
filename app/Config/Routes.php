@@ -27,3 +27,12 @@ $routes->post('/admin/estudiantes/guardar', 'EstudianteController::guardar');
 $routes->get('/admin/estudiantes/editar/(:num)', 'EstudianteController::editar/$1');
 $routes->post('/admin/estudiantes/actualizar/(:num)', 'EstudianteController::actualizar/$1');
 $routes->get('/admin/estudiantes/eliminar/(:num)', 'EstudianteController::eliminar/$1');
+
+
+$routes->get('/admin/profesores', 'adminCrud\Profesor::index');
+// Estudiantes CRUD
+$routes->get('/admin/profesores/crear', 'adminCrud\Profesor::crear');
+$routes->post('/admin/profesores/guardar', 'adminCrud\Profesor::guardar');
+$routes->get('/admin/profesores/editar/(:num)', 'adminCrud\Profesor::editar/$1');
+$routes->post('/admin/profesores/actualizar/(:num)', 'adminCrud\Profesor::actualizar/$1');
+$routes->get('/admin/profesores/eliminar/(:num)', 'adminCrud\Profesor::eliminar/$1');

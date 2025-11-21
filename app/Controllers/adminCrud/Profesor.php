@@ -69,7 +69,7 @@ class Profesor extends Controller
             'experiencia_anios' => $datos['experiencia_anios']
         ]);
 
-        return redirect()->to(base_url('admin/profesor'))
+        return redirect()->to(base_url('admin/profesores'))
                 ->with('success', 'Profesor creado correctamente.');
     }
 
@@ -115,7 +115,7 @@ class Profesor extends Controller
                     ->with('error', 'Error al actualizar el profesor.');
         }
 
-        return redirect()->to(base_url('admin/profesor'))
+        return redirect()->to(base_url('admin/profesores'))
                 ->with('success', 'Profesor actualizado correctamente.');
     }
 
@@ -127,7 +127,7 @@ class Profesor extends Controller
             return redirect()->back()->with('error', 'Error al eliminar el profesor.');
         }
 
-        return redirect()->to(base_url('admin/profesor'))
+        return redirect()->to(base_url('admin/profesores'))
                 ->with('success', 'Profesor eliminado correctamente.');
     }
 }

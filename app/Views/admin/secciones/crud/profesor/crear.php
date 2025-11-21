@@ -90,7 +90,7 @@
             </div>
 
             <div class="contenedor-btn">
-                <button type="submit" class="btn-guardar">Guardar Estudiante</button>
+                <button type="submit" class="btn-guardar">Guardar Profesor</button>
             </div>
         </div>
 
