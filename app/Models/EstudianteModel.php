@@ -2,7 +2,6 @@
 namespace App\Models;
 use CodeIgniter\Model;
 use config\Database;
-use App\Models\UsuarioModel;
 
 class EstudianteModel extends Model 
 {
