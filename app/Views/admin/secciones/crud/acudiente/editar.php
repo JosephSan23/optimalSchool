@@ -7,85 +7,86 @@
 <?= $this->section('content') ?>
 
 <div class="content-box">
-    <h2>Editar Profesor</h2>
+    <h2>Editar acudiente</h2>
     <hr class="linea">
 
-    <form action="<?= base_url('admin/acudientes/actualizar/' . $profesor['id_usuario']) ?>" method="post"
+    <form action="<?= base_url('admin/acudientees/actualizar/' . $acudiente['id_usuario']) ?>" method="post"
         class="formulario">
 
-        <input type="hidden" name="id_usuario" value="<?= $profesor['id_usuario'] ?>">
+        <input type="hidden" name="id_usuario" value="<?= $acudiente['id_usuario'] ?>">
 
         <div class="grid-2">
 
             <div class="form-grupo">
                 <label>Primer Nombre:</label>
-                <input type="text" name="primer_nombre" value="<?= esc($profesor['primer_nombre']) ?>" required>
+                <input type="text" name="primer_nombre" value="<?= esc($acudiente['primer_nombre']) ?>" required>
             </div>
 
             <div class="form-grupo">
                 <label>Segundo Nombre:</label>
-                <input type="text" name="segundo_nombre" value="<?= esc($profesor['segundo_nombre']) ?>">
+                <input type="text" name="segundo_nombre" value="<?= esc($acudiente['segundo_nombre']) ?>">
             </div>
 
             <div class="form-grupo">
                 <label>Primer Apellido:</label>
-                <input type="text" name="primer_apellido" value="<?= esc($profesor['primer_apellido']) ?>" required>
+                <input type="text" name="primer_apellido" value="<?= esc($acudiente['primer_apellido']) ?>" required>
             </div>
 
             <div class="form-grupo">
                 <label>Segundo Apellido:</label>
-                <input type="text" name="segundo_apellido" value="<?= esc($profesor['segundo_apellido']) ?>">
+                <input type="text" name="segundo_apellido" value="<?= esc($acudiente['segundo_apellido']) ?>">
             </div>
 
             <div class="form-grupo">
                 <label>Tipo de Documento:</label>
                 <select name="tipo_documento" required>
-                    <option value="CC" <?= $profesor['tipo_documento']=='CC'?'selected':'' ?>>Cédula</option>
-                    <option value="TI" <?= $profesor['tipo_documento']=='TI'?'selected':'' ?>>TI</option>
-                    <option value="CE" <?= $profesor['tipo_documento']=='CE'?'selected':'' ?>>CE</option>
-                    <option value="PA" <?= $profesor['tipo_documento']=='PA'?'selected':'' ?>>Pasaporte</option>
+                    <option value="CC" <?= $acudiente['tipo_documento']=='CC'?'selected':'' ?>>Cédula</option>
+                    <option value="TI" <?= $acudiente['tipo_documento']=='TI'?'selected':'' ?>>TI</option>
+                    <option value="CE" <?= $acudiente['tipo_documento']=='CE'?'selected':'' ?>>CE</option>
+                    <option value="PA" <?= $acudiente['tipo_documento']=='PA'?'selected':'' ?>>Pasaporte</option>
                 </select>
             </div>
 
             <div class="form-grupo">
                 <label>Número Documento:</label>
-                <input type="text" name="documento" value="<?= esc($profesor['documento']) ?>" required>
+                <input type="text" name="documento" value="<?= esc($acudiente['documento']) ?>" required>
             </div>
 
             <div class="form-grupo">
                 <label>Usuario:</label>
-                <input type="text" name="username" value="<?= esc($profesor['username']) ?>" required>
+                <input type="text" name="username" value="<?= esc($acudiente['username']) ?>" required>
             </div>
 
             <div class="form-grupo">
                 <label>Correo:</label>
-                <input type="email" name="correo" value="<?= esc($profesor['correo']) ?>" required>
+                <input type="email" name="correo" value="<?= esc($acudiente['correo']) ?>" required>
             </div>
 
             <div class="form-grupo">
                 <label>Teléfono:</label>
-                <input type="text" name="telefono" value="<?= esc($profesor['telefono']) ?>">
+                <input type="text" name="telefono" value="<?= esc($acudiente['telefono']) ?>">
             </div>
 
             <div class="form-grupo">
                 <label>Dirección:</label>
-                <input type="text" name="direccion" value="<?= esc($profesor['direccion']) ?>">
+                <input type="text" name="direccion" value="<?= esc($acudiente['direccion']) ?>">
             </div>
 
             <div class="form-grupo">
                 <label>Fecha Nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" value="<?= esc($profesor['fecha_nacimiento']) ?>">
+                <input type="date" name="fecha_nacimiento" value="<?= esc($acudiente['fecha_nacimiento']) ?>">
             </div>
 
             <div class="form-grupo">
-                <label>Titulo Academico:</label>
-                <input type="text" name="titulo_academico" value="<?= esc($profesor['titulo_academico']) ?>">
+                <label>Parentesco:</label>
+                <select name="parentesco" required>
+                    <option value="madre" <?= $acudiente['parentesco']=='madre'?'selected':'' ?>>Madre</option>
+                    <option value="padre" <?= $acudiente['parentesco']=='padre'?'selected':'' ?>>Padre</option>
+                    <option value="tutor" <?= $acudiente['parentesco']=='tutor'?'selected':'' ?>>Tutor</option>
+                    <option value="otro" <?= $acudiente['parentesco']=='otro'?'selected':'' ?>>Otro</option>
+                </select>
             </div>
 
-            <div class="form-grupo">
-                <label>Experiencia en Años:</label>
-                <input type="number" name="experiencia_anios" value="<?= esc($profesor['experiencia_anios']) ?>">
-            </div>
 
 
 

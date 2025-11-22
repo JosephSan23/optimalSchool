@@ -80,17 +80,17 @@
             </div>
 
             <div class="form-grupo">
-                <label>Titulo academico:</label>
-                <input type="text" name="titulo_academico">
-            </div>
-
-            <div class="form-grupo">
-                <label>Experiencia en años:</label>
-                <input type="number" name="experiencia_anios">
+                <label>Parentesco:</label>
+                <select name="parentesco" required>
+                    <option value="madre">Madre</option>
+                    <option value="padre">Padre</option>
+                    <option value="tutor">Tutor</option>
+                    <option value="otro">Otro</option>
+                </select>
             </div>
 
             <div class="contenedor-btn">
-                <button type="submit" class="btn-guardar">Guardar Profesor</button>
+                <button type="submit" class="btn-guardar">Guardar Acudiente</button>
             </div>
         </div>
 
