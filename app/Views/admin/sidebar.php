@@ -6,9 +6,9 @@
 
     <nav class="sidebar-menu">
         <ul>
-            <li><a href="<?= base_url('admin') ?>" class="active">Dashboard</a></li>
+            <li><a href="<?= base_url('admin') ?>">Inicio</a></li>
             <li><a href="<?= base_url('admin/estudiantes') ?>">Estudiantes</a></li>
-            <li><a href="">Postulantes</a></li>
+            <!-- <li><a href="">Postulantes</a></li> -->
             <li><a href="<?= base_url('admin/profesores') ?>">Profesores</a></li>
             <li><a href="#">Acudientes</a></li>
             <li><a href="#">Cursos</a></li>
