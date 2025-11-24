@@ -30,9 +30,17 @@ $routes->get('/admin/estudiantes/eliminar/(:num)', 'EstudianteController::elimin
 
 
 $routes->get('/admin/profesores', 'adminCrud\Profesor::index');
-// Estudiantes CRUD
+// profesores CRUD
 $routes->get('/admin/profesores/crear', 'adminCrud\Profesor::crear');
 $routes->post('/admin/profesores/guardar', 'adminCrud\Profesor::guardar');
 $routes->get('/admin/profesores/editar/(:num)', 'adminCrud\Profesor::editar/$1');
 $routes->post('/admin/profesores/actualizar/(:num)', 'adminCrud\Profesor::actualizar/$1');
 $routes->get('/admin/profesores/eliminar/(:num)', 'adminCrud\Profesor::eliminar/$1');
+
+$routes->get('/admin/acudientes', 'adminCrud\Acudiente::index');
+// acudientes CRUD
+$routes->get('/admin/acudientes/crear', 'adminCrud\Acudiente::crear');
+$routes->post('/admin/acudientes/guardar', 'adminCrud\Acudiente::guardar');
+$routes->get('/admin/acudientes/editar/(:num)', 'adminCrud\Acudiente::editar/$1');
+$routes->post('/admin/acudientes/actualizar/(:num)', 'adminCrud\Acudiente::actualizar/$1');
+$routes->get('/admin/acudientes/eliminar/(:num)', 'adminCrud\Acudiente::eliminar/$1');
