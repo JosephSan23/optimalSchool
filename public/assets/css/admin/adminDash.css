@@ -170,3 +170,18 @@ body {
 .content {
     padding: 20px;
 }
+
+
+/* listas desplegables */
+.submenu-items {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu-items.show {
+    display: block;
+}
+
+.toggle-submenu {
+    cursor: pointer;
+}
