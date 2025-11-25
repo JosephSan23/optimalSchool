@@ -1,0 +1,175 @@
+<?php 
+namespace App\Controllers\Admin;
+
+use CodeIgniter\Controller;
+use App\Models\UsuarioModel;
+use App\Models\EstudianteModel;
+use App\Models\ProfesorModel;
+use App\Models\AcudienteModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+class ReportesController extends Controller 
+{
+    protected $usuarioModel;
+    protected $estudianteModel;
+    protected $acudienteModel;
+    protected $profesorModel;
+
+    public function __construct()
+    {
+        $this->usuarioModel    = new UsuarioModel();
+        $this->estudianteModel = new EstudianteModel();
+        $this->acudienteModel  = new AcudienteModel();
+        $this->profesorModel = new ProfesorModel();
+    }
+
+    // Vista principal donde mostrarás los botones de descargar
+    public function index()
+    {
+        return view('roles/admin/reportes/index');
+    }
+
+    // Exportar estudiantes
+    public function exportarEstudiantes()
+    {
+        $colegio_id = session()->get('colegio_id');
+
+        // Obtenemos los datos
+        $estudiantes = $this->estudianteModel->obtenerEstudiantes($colegio_id);
+
+        // Crear hoja de Excel
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Estudiantes');
+
+        // Encabezados del Excel
+        $encabezados = [
+            'ID', 'Colegio', 'Rol', 'Primer Nombre', 'Segundo Nombre',
+            'Primer Apellido', 'Segundo Apellido', 'Tipo Doc', 'Documento',
+            'Username', 'Correo', 'Teléfono', 'Dirección', 'Nacimiento',
+            'Estado', 'Fecha Ingreso'
+        ];
+
+        $col = 1;
+        foreach ($encabezados as $titulo) {
+            $sheet->setCellValueByColumnAndRow($col, 1, $titulo);
+            $col++;
+        }
+
+        // Datos
+        $fila = 2;
+        foreach ($estudiantes as $estu) {
+            $col = 1;
+            foreach ($estu as $valor) {
+                $sheet->setCellValueByColumnAndRow($col, $fila, $valor);
+                $col++;
+            }
+            $fila++;
+        }
+
+        // Descargar archivo
+        $writer = new Xlsx($spreadsheet);
+
+        $filename = "Reporte_Estudiantes_" . date('Y-m-d_H-i-s') . ".xlsx";
+
+        // Headers
+        return $this->response
+            ->setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            ->setHeader('Content-Disposition', "attachment; filename={$filename}")
+            ->setHeader('Cache-Control', 'max-age=0')
+            ->setBody($writer->save('php://output'));
+    }
+
+    // Exportar acudientes
+    public function exportarAcudientes()
+    {
+        $colegio_id = session()->get('colegio_id');
+
+        $acudientes = $this->acudienteModel->obtenerAcudientes($colegio_id);
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Acudientes');
+
+        $encabezados = [
+            'ID', 'Colegio', 'Rol', 'Primer Nombre', 'Segundo Nombre',
+            'Primer Apellido', 'Segundo Apellido', 'Tipo Doc', 'Documento',
+            'Username', 'Correo', 'Teléfono', 'Dirección', 'Nacimiento',
+            'Parentesco'
+        ];
+
+        $col = 1;
+        foreach ($encabezados as $titulo) {
+            $sheet->setCellValueByColumnAndRow($col, 1, $titulo);
+            $col++;
+        }
+
+        $fila = 2;
+        foreach ($acudientes as $acu) {
+            $col = 1;
+            foreach ($acu as $valor) {
+                $sheet->setCellValueByColumnAndRow($col, $fila, $valor);
+                $col++;
+            }
+            $fila++;
+        }
+
+        $writer = new Xlsx($spreadsheet);
+
+        $filename = "Reporte_Acudientes_" . date('Y-m-d_H-i-s') . ".xlsx";
+
+        return $this->response
+            ->setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            ->setHeader('Content-Disposition', "attachment; filename={$filename}")
+            ->setHeader('Cache-Control', 'max-age=0')
+            ->setBody($writer->save('php://output'));
+    }
+
+    public function exportarProfesores()
+    {
+        $colegio_id = session()->get('colegio_id');
+
+        $profesores = $this->profesorModel->obtenerProfesores($colegio_id);
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Profesores');
+
+        $encabezados = [
+            'ID', 'Colegio', 'Rol', 'Primer Nombre', 'Segundo Nombre',
+            'Primer Apellido', 'Segundo Apellido', 'Tipo Doc', 'Documento',
+            'Username', 'Correo', 'Teléfono', 'Dirección', 'Nacimiento',
+            'Especialidad', 'Título Académico'
+        ];
+
+        $col = 1;
+        foreach ($encabezados as $titulo) {
+            $sheet->setCellValueByColumnAndRow($col, 1, $titulo);
+            $col++;
+        }
+
+        $fila = 2;
+        foreach ($profesores as $pro) {
+            $col = 1;
+            foreach ($pro as $valor) {
+                $sheet->setCellValueByColumnAndRow($col, $fila, $valor);
+                $col++;
+            }
+            $fila++;
+        }
+
+        $writer = new Xlsx($spreadsheet);
+
+        $filename = "Reporte_Profesores_" . date('Y-m-d_H-i-s') . ".xlsx";
+
+        return $this->response
+            ->setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            ->setHeader('Content-Disposition', "attachment; filename={$filename}")
+            ->setHeader('Cache-Control', 'max-age=0')
+            ->setBody($writer->save('php://output'));
+    }
+
+}
+
+?>
