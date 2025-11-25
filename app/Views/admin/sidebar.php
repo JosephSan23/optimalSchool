@@ -10,7 +10,7 @@
             <li><a href="<?= base_url('admin/estudiantes') ?>">Estudiantes</a></li>
             <!-- <li><a href="">Postulantes</a></li> -->
             <li><a href="<?= base_url('admin/profesores') ?>">Profesores</a></li>
-            <li><a href="#">Acudientes</a></li>
+            <li><a href="<?=  base_url('admin/acudientes') ?>">Acudientes</a></li>
             <li><a href="#">Cursos</a></li>
             <li><a href="#">Reportes</a></li>
             <li><a href="#">Configuración</a></li>

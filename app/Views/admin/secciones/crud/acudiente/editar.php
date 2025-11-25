@@ -10,7 +10,7 @@
     <h2>Editar acudiente</h2>
     <hr class="linea">
 
-    <form action="<?= base_url('admin/acudientees/actualizar/' . $acudiente['id_usuario']) ?>" method="post"
+    <form action="<?= base_url('admin/acudientes/actualizar/' . $acudiente['id_usuario']) ?>" method="post"
         class="formulario">
 
         <input type="hidden" name="id_usuario" value="<?= $acudiente['id_usuario'] ?>">
