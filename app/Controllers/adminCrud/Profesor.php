@@ -18,19 +18,18 @@ class Profesor extends Controller
 
     public function index()
     {
-        $colegio_id = 1; 
+        $colegio_id = session()->get('colegio_id');
+ 
 
         $data['profesores'] = $this->profesorModel->obtenerProfesores($colegio_id);
 
-        echo view('admin/header');
         echo view('admin/secciones/crud/profesor/profesores', $data);
     }
 
     public function crear()
     {
-        $data['colegios'] = $this->colegioModel->findAll();
+        $data['colegio'] = $this->colegioModel->find(session()->get('colegio_id'));
 
-        echo view('admin/header');
         echo view('admin/secciones/crud/profesor/crear', $data);
     }
 
@@ -39,7 +38,8 @@ class Profesor extends Controller
         $datos = $this->request->getPost();
 
         $usuarioModel = model('UsuarioModel');
-        $colegio_id = 1;
+        $colegio_id = session()->get('colegio_id');
+
 
         // Crear usuario
         $usuarioData = [
@@ -81,7 +81,6 @@ class Profesor extends Controller
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Profesor no encontrado');
         }
 
-        echo view('admin/header');
         echo view('admin/secciones/crud/profesor/editar', $data);
     }
 

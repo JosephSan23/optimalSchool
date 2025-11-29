@@ -18,18 +18,17 @@ class Acudiente extends Controller
 
     public function index()
     {
-        $colegio_id = 1; 
+        $colegio_id = session()->get('colegio_id');
+ 
 
         $data['acudientes'] = $this->acudienteModel->obtenerAcudientes($colegio_id);
-        echo view('admin/header');
         echo view('admin/secciones/crud/acudiente/acudientes', $data);
     }
 
     public function crear()
     {
-        $data['colegios'] = $this->colegioModel->findAll();
+        $data['colegio'] = $this->colegioModel->find(session()->get('colegio_id'));
 
-        echo view('admin/header');
         echo view('admin/secciones/crud/acudiente/crear', $data);
     }
 
@@ -38,7 +37,8 @@ class Acudiente extends Controller
         $datos = $this->request->getPost();
 
         $usuarioModel = model('UsuarioModel');
-        $colegio_id = 1;
+        $colegio_id = session()->get('colegio_id');
+
 
         // Crear usuario
         $usuarioData = [
@@ -79,7 +79,6 @@ class Acudiente extends Controller
             throw new \CodeIgniter\Exceptions\PageNotFoundException('acudiente no encontrado');
         }
 
-        echo view('admin/header');
         echo view('admin/secciones/crud/acudiente/editar', $data);
     }
 

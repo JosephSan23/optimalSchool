@@ -79,3 +79,27 @@
 .btn-guardar:hover {
     background: #2476b0;
 }
+
+.form-descripcion {
+    grid-column: span 2;
+    margin-bottom: 20px;
+}
+
+.form-descripcion textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    background: #fafafa;
+    outline: none;
+    transition: 0.2s border, 0.2s box-shadow;
+}
+
+.form-descripcion textarea:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 5px rgba(75, 123, 236, 0.4);
+    background: white;
+}

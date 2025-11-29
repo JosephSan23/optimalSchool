@@ -20,13 +20,13 @@ $routes->get('/acudiente', 'AcudienteController::index');
 
 
 
-$routes->get('/admin/estudiantes', 'EstudianteController::index');
+$routes->get('/admin/estudiantes', 'adminCrud\Estudiante::index');
 // Estudiantes CRUD
-$routes->get('/admin/estudiantes/crear', 'EstudianteController::crear');
-$routes->post('/admin/estudiantes/guardar', 'EstudianteController::guardar');
-$routes->get('/admin/estudiantes/editar/(:num)', 'EstudianteController::editar/$1');
-$routes->post('/admin/estudiantes/actualizar/(:num)', 'EstudianteController::actualizar/$1');
-$routes->get('/admin/estudiantes/eliminar/(:num)', 'EstudianteController::eliminar/$1');
+$routes->get('/admin/estudiantes/crear', 'adminCrud\Estudiante::crear');
+$routes->post('/admin/estudiantes/guardar', 'adminCrud\Estudiante::guardar');
+$routes->get('/admin/estudiantes/editar/(:num)', 'adminCrud\Estudiante::editar/$1');
+$routes->post('/admin/estudiantes/actualizar/(:num)', 'adminCrud\Estudiante::actualizar/$1');
+$routes->get('/admin/estudiantes/eliminar/(:num)', 'adminCrud\Estudiante::eliminar/$1');
 
 
 $routes->get('/admin/profesores', 'adminCrud\Profesor::index');
@@ -44,3 +44,27 @@ $routes->post('/admin/acudientes/guardar', 'adminCrud\Acudiente::guardar');
 $routes->get('/admin/acudientes/editar/(:num)', 'adminCrud\Acudiente::editar/$1');
 $routes->post('/admin/acudientes/actualizar/(:num)', 'adminCrud\Acudiente::actualizar/$1');
 $routes->get('/admin/acudientes/eliminar/(:num)', 'adminCrud\Acudiente::eliminar/$1');
+
+$routes->get('/admin/cursos', 'adminCrud\CursoController::index');
+// cursos CRUD
+$routes->get('/admin/cursos/crear', 'adminCrud\CursoController::crear');
+$routes->post('/admin/cursos/guardar', 'adminCrud\CursoController::guardar');
+$routes->get('/admin/cursos/editar/(:num)', 'adminCrud\CursoController::editar/$1');
+$routes->post('/admin/cursos/actualizar/(:num)', 'adminCrud\CursoController::actualizar/$1');
+$routes->get('/admin/cursos/eliminar/(:num)', 'adminCrud\CursoController::eliminar/$1');
+
+
+$routes->get('admin/reportes', 'Admin\ReportesController::index');
+$routes->get('admin/reportes/exportarE', 'Admin\ReportesController::exportarEstudiantes');
+$routes->get('admin/reportes/exportarP', 'Admin\ReportesController::exportarProfesores');
+$routes->get('admin/reportes/exportarA', 'Admin\ReportesController::exportarAcudientes');
+
+// Secciones de Asignación Estudiante-Curso
+$routes->get('admin/asignaciones', 'Admin\AsignacionEstuController::index');
+$routes->get('admin/asignaciones/crear', 'Admin\AsignacionEstuController::crear');
+$routes->post('admin/asignaciones/guardar', 'Admin\AsignacionEstuController::guardar');
+
+$routes->get('admin/asignaciones/editar/(:num)/(:num)', 'Admin\AsignacionEstuController::editar/$1/$2');
+$routes->post('admin/asignaciones/actualizar/(:num)/(:num)', 'Admin\AsignacionEstuController::actualizar/$1/$2');
+
+$routes->get('admin/asignaciones/eliminar/(:num)/(:num)', 'Admin\AsignacionEstuController::eliminar/$1/$2');

@@ -10,11 +10,9 @@
 
 <body>
     <div class="login-container">
-        <!-- Sección izquierda con imagen -->
+
         <div class="login-image">
         </div>
-
-        <!-- Sección derecha con formulario -->
         <div class="login-box">
             <div class="login-content">
                 <h2>Iniciar Sesión</h2>

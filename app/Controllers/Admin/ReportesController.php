@@ -6,6 +6,7 @@ use App\Models\UsuarioModel;
 use App\Models\EstudianteModel;
 use App\Models\ProfesorModel;
 use App\Models\AcudienteModel;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -27,7 +28,8 @@ class ReportesController extends Controller
     // Vista principal donde mostrarás los botones de descargar
     public function index()
     {
-        return view('roles/admin/reportes/index');
+        // echo view('admin/layout');
+        echo view('admin/secciones/reportes');
     }
 
     // Exportar estudiantes
@@ -53,7 +55,8 @@ class ReportesController extends Controller
 
         $col = 1;
         foreach ($encabezados as $titulo) {
-            $sheet->setCellValueByColumnAndRow($col, 1, $titulo);
+            $cell = Coordinate::stringFromColumnIndex($col) . '1';
+            $sheet->setCellValue($cell, $titulo);
             $col++;
         }
 
@@ -62,7 +65,8 @@ class ReportesController extends Controller
         foreach ($estudiantes as $estu) {
             $col = 1;
             foreach ($estu as $valor) {
-                $sheet->setCellValueByColumnAndRow($col, $fila, $valor);
+                $cell = Coordinate::stringFromColumnIndex($col) . $fila;
+                $sheet->setCellValue($cell, $valor);
                 $col++;
             }
             $fila++;
@@ -101,15 +105,18 @@ class ReportesController extends Controller
 
         $col = 1;
         foreach ($encabezados as $titulo) {
-            $sheet->setCellValueByColumnAndRow($col, 1, $titulo);
+            $cell = Coordinate::stringFromColumnIndex($col) . '1';
+            $sheet->setCellValue($cell, $titulo);
             $col++;
         }
 
+        // Datos
         $fila = 2;
         foreach ($acudientes as $acu) {
             $col = 1;
             foreach ($acu as $valor) {
-                $sheet->setCellValueByColumnAndRow($col, $fila, $valor);
+                $cell = Coordinate::stringFromColumnIndex($col) . $fila;
+                $sheet->setCellValue($cell, $valor);
                 $col++;
             }
             $fila++;
@@ -140,20 +147,23 @@ class ReportesController extends Controller
             'ID', 'Colegio', 'Rol', 'Primer Nombre', 'Segundo Nombre',
             'Primer Apellido', 'Segundo Apellido', 'Tipo Doc', 'Documento',
             'Username', 'Correo', 'Teléfono', 'Dirección', 'Nacimiento',
-            'Especialidad', 'Título Académico'
+            'Título Académico', 'Experiencia en años'
         ];
 
         $col = 1;
         foreach ($encabezados as $titulo) {
-            $sheet->setCellValueByColumnAndRow($col, 1, $titulo);
+            $cell = Coordinate::stringFromColumnIndex($col) . '1';
+            $sheet->setCellValue($cell, $titulo);
             $col++;
         }
 
+        // Datos
         $fila = 2;
-        foreach ($profesores as $pro) {
+        foreach ($profesores as $prof) {
             $col = 1;
-            foreach ($pro as $valor) {
-                $sheet->setCellValueByColumnAndRow($col, $fila, $valor);
+            foreach ($prof as $valor) {
+                $cell = Coordinate::stringFromColumnIndex($col) . $fila;
+                $sheet->setCellValue($cell, $valor);
                 $col++;
             }
             $fila++;

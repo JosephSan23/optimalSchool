@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\adminCrud;
 
 use App\Models\EstudianteModel;
 use App\Models\ColegioModel;
 use CodeIgniter\Controller;
 
-class EstudianteController extends Controller
+class Estudiante extends Controller
 {
     
     protected $estudianteModel;
@@ -18,36 +18,39 @@ class EstudianteController extends Controller
         $this->colegioModel = new ColegioModel();
     }
 
-    // 📘 Mostrar lista de estudiantes
+    //  Mostrar lista de estudiantes
     public function index()
     {
         // Puedes cambiar el ID del colegio según tu prueba
-        $colegio_id = 1; 
+        $colegio_id = session()->get('colegio_id');
+ 
 
         $data['estudiantes'] = $this->estudianteModel->obtenerEstudiantes($colegio_id);
 
-        echo view('admin/header');
-        echo view('admin/secciones/estudiantes', $data);
+        echo view('admin/secciones/crud/estudiante/estudiantes', $data);
+        
+        
         // echo view('admin/footer');
     }
 
-    // 📗 Mostrar formulario para crear estudiante
+    //  Mostrar formulario para crear estudiante
     public function crear()
     {
-        $data['colegios'] = $this->colegioModel->findAll();
+        $data['colegio'] = $this->colegioModel->find(session()->get('colegio_id'));
 
-        echo view('admin/secciones/crear_estudiante', $data);
+        echo view('admin/secciones/crud/estudiante/crear', $data);
         // echo view('admin/footer');
     }
 
-    // 📕 Guardar nuevo estudiante
+    //  Guardar nuevo estudiante
     public function guardar()
     {
         $datos = $this->request->getPost();
 
         $usuarioModel = model('UsuarioModel'); // Usa tu modelo de Usuario si ya existe
 
-        $colegio_id = 1;
+        $colegio_id = session()->get('colegio_id');
+
 
         // Crear usuario
         $usuarioData = [
@@ -88,7 +91,7 @@ class EstudianteController extends Controller
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Estudiante no encontrado');
         }
 
-        echo view('admin/secciones/editar_estudiante', $data);
+        echo view('admin/secciones/crud/estudiante/editar', $data);
     }
 
     public function actualizar($id)
@@ -127,7 +130,7 @@ class EstudianteController extends Controller
 
     }
 
-    // 📙 Eliminar estudiante
+    //  Eliminar estudiante
     public function eliminar($id)
     {
         $resultado = $this->estudianteModel->eliminarEstudiante($id);

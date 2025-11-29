@@ -7,6 +7,7 @@
     <title><?= $title ?? 'Panel Admin' ?></title>
 
     <link rel="stylesheet" href="<?= base_url('assets/css/admin/adminDash.css') ?>">
+    <link href='https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css' rel='stylesheet'>1
 
     <?= $this->renderSection('styles') ?>
 </head>
