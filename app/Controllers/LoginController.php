@@ -17,7 +17,6 @@ class LoginController extends Controller
 
         $correoUsuario = $this->request->getPost('correo_usuario');
         $password = $this->request->getPost('contrasena');
-        $rol = $this->request->getPost('rol');
         $colegio = $this->request->getPost('colegio');
 
         // Buscar usuario por correo o username
@@ -36,11 +35,7 @@ class LoginController extends Controller
         if ($password !== $usuario['contrasena']) {
             return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
         }
-
-        if ($usuario['rol'] != $rol) {
-            return redirect()->to('/login')->with('error', 'Rol no coincide.');
-        }
-
+        
         // Verificar colegio
         if ($usuario['colegio_id'] != $colegio) {
             return redirect()->to('/login')->with('error', 'No pertenece a este colegio.');

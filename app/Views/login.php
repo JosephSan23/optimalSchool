@@ -42,18 +42,6 @@
                     </div>
 
                     <div class="row-inputs">
-
-                        <div class="input-group">
-                            <label for="rol">Rol</label>
-                            <select id="rol" name="rol" required>
-                                <option value="">Selecciona tu rol</option>
-                                <option value="administrador">Administrador</option>
-                                <option value="profesor">Profesor</option>
-                                <option value="estudiante">Estudiante</option>
-                                <option value="acudiente">Acudiente</option>
-                            </select>
-                        </div>
-
                         <div class="input-group">
                             <label for="colegio">Colegio</label>
                             <select id="colegio" name="colegio" required>
@@ -66,7 +54,10 @@
 
                     </div>
 
-                    <button type="submit">Iniciar sesión</button>
+                    <div class="btn-wrapper">
+                        <button type="submit">Iniciar sesión</button>
+                    </div>
+
                 </form>
 
             </div>
