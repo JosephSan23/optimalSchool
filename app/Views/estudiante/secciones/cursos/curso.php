@@ -50,4 +50,20 @@
 
     </div>
 </div>
+
+<div id="courseModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 class="modal-title">Accede a las secciones del curso: Nombre del curso</h3>
+        <p class="modal-description">Elige la seccion a la que deseas ingresar:</p>
+
+        <div class="modal-actions">
+            <a href="#" class="modal-button primary-button">
+                Ver materias
+            </a>
+            <a href="#" class="modal-button secondary-button">Ver competencias</a>
+        </div>
+    </div>
+</div>
+
 <?= $this->endSection() ?>

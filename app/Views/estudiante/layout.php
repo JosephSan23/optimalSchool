@@ -25,6 +25,8 @@
         </div>
     </div>
 
+    <script src="<?= base_url('assets/js/estudiantes/modalCursos.js') ?>"></script>
+
 </body>
 
 </html>
