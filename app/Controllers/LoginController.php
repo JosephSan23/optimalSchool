@@ -1,5 +1,6 @@
 <?php 
 namespace App\Controllers;
+
 use App\Models\UsuarioModel;
 use CodeIgniter\Controller;
 
@@ -15,9 +16,9 @@ class LoginController extends Controller
         $session = session();
         $usuarioModel = new UsuarioModel();
 
-        $correoUsuario = $this->request->getPost('correo_usuario');
-        $password = $this->request->getPost('contrasena');
-        $colegio = $this->request->getPost('colegio');
+        $correoUsuario = trim($this->request->getPost('correo_usuario'));
+        $password      = trim($this->request->getPost('contrasena'));
+        $colegio       = $this->request->getPost('colegio');
 
         // Buscar usuario por correo o username
         $usuario = $usuarioModel
@@ -26,37 +27,17 @@ class LoginController extends Controller
                 ->orWhere('username', $correoUsuario)
             ->groupEnd()
             ->first();
-
+        
         if (!$usuario) {
             return redirect()->to('/login')->with('error', 'Usuario no encontrado.');
         }
+        // Verificar contraseña
+        $passIngresada = trim($password);
+        $passBD= trim($usuario['contrasena']);
 
-        $passIngresada = $password;  
-        $passBD = $usuario['contrasena'];
-
-        // Saber si la contraseña guardada está hasheada    
-        $esHash = password_get_info($passBD)['algo'] !== 0;
-
-        if ($esHash) {
-
-        // Contraseña HASHEADA 
-        if (!password_verify($passIngresada, $passBD)) {
-            return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
-        }
-
-        } else {
-
-                // Contraseña en TEXTO PLANO 
-            if ($passIngresada !== $passBD) {
-                return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
-            }
-
-        // convertir automáticamente la contraseña a hash
-        $nuevoHash = password_hash($passIngresada, PASSWORD_DEFAULT);
-
-        $usuarioModel->update($usuario['id_usuario'], [
-        'contrasena' => $nuevoHash
-        ]);
+        // Validación que acepta hash y texto plano
+        if (!password_verify($passIngresada, $passBD) && $passIngresada !== $passBD) {
+             return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
         }
 
         // Verificar colegio
@@ -67,10 +48,10 @@ class LoginController extends Controller
         // Crear sesión
         $sessionData = [
             'id_usuario' => $usuario['id_usuario'],
-            'nombre' => $usuario['primer_nombre']. ' ' . $usuario['primer_apellido'],
-            'rol' => $usuario['rol'],
+            'nombre'     => $usuario['primer_nombre'] . ' ' . $usuario['primer_apellido'],
+            'rol'        => $usuario['rol'],
             'colegio_id' => $usuario['colegio_id'],
-            'logueado' => true
+            'logueado'   => true
         ];
 
         $session->set($sessionData);
@@ -96,4 +77,3 @@ class LoginController extends Controller
         return redirect()->to('/login');
     }
 }
-?>
