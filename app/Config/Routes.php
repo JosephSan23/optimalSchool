@@ -13,7 +13,7 @@ $routes->get('/logout', 'LoginController::logout');
 
 $routes->get('/admin','Administrador::index');
 $routes->get('/profesor', 'ProfesorController::index');
-$routes->get('/estudiante', 'Estudiante::index');
+$routes->get('/estudiante', 'EstudianteController::index');
 $routes->get('/acudiente', 'AcudienteController::index');
 
 

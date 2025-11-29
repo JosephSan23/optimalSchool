@@ -31,11 +31,34 @@ class LoginController extends Controller
             return redirect()->to('/login')->with('error', 'Usuario no encontrado.');
         }
 
-        // Contraseña sin encriptar
-        if ($password !== $usuario['contrasena']) {
+        $passIngresada = $password;  
+        $passBD = $usuario['contrasena'];
+
+        // Saber si la contraseña guardada está hasheada    
+        $esHash = password_get_info($passBD)['algo'] !== 0;
+
+        if ($esHash) {
+
+        // Contraseña HASHEADA 
+        if (!password_verify($passIngresada, $passBD)) {
             return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
         }
-        
+
+        } else {
+
+                // Contraseña en TEXTO PLANO 
+            if ($passIngresada !== $passBD) {
+                return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
+            }
+
+        // convertir automáticamente la contraseña a hash
+        $nuevoHash = password_hash($passIngresada, PASSWORD_DEFAULT);
+
+        $usuarioModel->update($usuario['id_usuario'], [
+        'contrasena' => $nuevoHash
+        ]);
+        }
+
         // Verificar colegio
         if ($usuario['colegio_id'] != $colegio) {
             return redirect()->to('/login')->with('error', 'No pertenece a este colegio.');
