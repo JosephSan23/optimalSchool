@@ -8,8 +8,8 @@
     <div class="usuario-info">
 
         <div class="user-text">
-            <span>Juan Pérez</span>
-            <small>Administrador</small>
+            <span><strong><?= session()->get('nombre') ?></strong><br></span>
+            <small><?= ucfirst(session()->get('rol')) ?></small>
         </div>
 
         <a href="<?= base_url('logout') ?>" class="btn-logout">Cerrar Sesion</a>

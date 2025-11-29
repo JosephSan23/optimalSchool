@@ -49,7 +49,7 @@ class LoginController extends Controller
         // Crear sesión
         $sessionData = [
             'id_usuario' => $usuario['id_usuario'],
-            'nombre' => $usuario['primer_nombre'],
+            'nombre' => $usuario['primer_nombre']. ' ' . $usuario['primer_apellido'],
             'rol' => $usuario['rol'],
             'colegio_id' => $usuario['colegio_id'],
             'logueado' => true

@@ -6,7 +6,8 @@
 
     <nav class="sidebar-menu">
         <ul>
-            <i class='bxr  bx-core'></i> <li><a href="<?= base_url('admin') ?>">Inicio</a></li>
+            <i class='bxr  bx-core'></i>
+            <li><a href="<?= base_url('admin') ?>">Inicio</a></li>
             <li><a href="<?= base_url('admin/estudiantes') ?>">Estudiantes</a></li>
             <!-- <li><a href="">Postulantes</a></li> -->
             <li><a href="<?= base_url('admin/profesores') ?>">Profesores</a></li>
@@ -14,7 +15,6 @@
             <li><a href="<?= base_url('admin/cursos') ?>">Cursos</a></li>
             <li><a href="<?= base_url('admin/asignaciones') ?>">Asignaciones</a></li>
             <li><a href="<?= base_url('admin/reportes') ?>">Reportes</a></li>
-            <li><a href="#">Configuración</a></li>
         </ul>
     </nav>
 </aside>
