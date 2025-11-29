@@ -20,8 +20,8 @@
                 <label>Estudiante:</label>
                 <select name="id_estudiante" required>
                     <?php foreach ($estudiantes as $e): ?>
-                    <option value="<?= $e['id_usuario'] ?>"
-                        <?= $e['id_usuario'] == $registro['id_estudiante'] ? 'selected' : '' ?>>
+                    <option value="<?= $e['id_estudiante'] ?>"
+                        <?= $e['id_estudiante'] == $registro['id_estudiante'] ? 'selected' : '' ?>>
                         <?= $e['primer_nombre'] . ' ' . $e['primer_apellido'] ?>
                     </option>
                     <?php endforeach; ?>

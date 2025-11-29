@@ -22,7 +22,7 @@ class EstudianteModel extends Model
         $builder = $this->db->table('usuario')
             ->select('usuario.id_usuario, usuario.colegio_id, usuario.rol, usuario.primer_nombre, usuario.segundo_nombre, 
             usuario.primer_apellido, usuario.segundo_apellido, usuario.tipo_documento, usuario.documento, usuario.username, usuario.correo, 
-            usuario.telefono, usuario.direccion, usuario.fecha_nacimiento, usuario.contrasena, estudiante.fecha_ingreso, estudiante.estado')
+            usuario.telefono, usuario.direccion, usuario.fecha_nacimiento, estudiante.fecha_ingreso, estudiante.estado')
             ->join('estudiante', 'estudiante.id_estudiante = usuario.id_usuario')
             ->where('usuario.rol', 'estudiante');
 

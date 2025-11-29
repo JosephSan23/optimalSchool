@@ -14,7 +14,7 @@ class ProfesorModel extends Model
         $builder = $this->db->table('usuario')
             ->select('usuario.id_usuario, usuario.colegio_id, usuario.rol, usuario.primer_nombre, usuario.segundo_nombre, 
             usuario.primer_apellido, usuario.segundo_apellido, usuario.tipo_documento, usuario.documento, usuario.username, usuario.correo, 
-            usuario.telefono, usuario.direccion, usuario.fecha_nacimiento, usuario.contrasena, profesor.titulo_academico, profesor.experiencia_anios')
+            usuario.telefono, usuario.direccion, usuario.fecha_nacimiento, profesor.titulo_academico, profesor.experiencia_anios')
             ->join('profesor', 'profesor.id_profesor = usuario.id_usuario')
             ->where('usuario.rol', 'profesor');
 

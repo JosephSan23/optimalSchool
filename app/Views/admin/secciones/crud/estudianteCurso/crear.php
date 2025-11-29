@@ -25,7 +25,7 @@
                 <select name="id_estudiante" required>
                     <option value="">Seleccione</option>
                     <?php foreach ($estudiantes as $e): ?>
-                    <option value="<?= $e['id_usuario'] ?>">
+                    <option value="<?= $e['id_estudiante'] ?>">
                         <?= $e['primer_nombre'] . ' ' . $e['primer_apellido'] ?>
                     </option>
                     <?php endforeach; ?>

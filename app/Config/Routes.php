@@ -50,7 +50,7 @@ $routes->get('/admin/cursos', 'adminCrud\CursoController::index');
 $routes->get('/admin/cursos/crear', 'adminCrud\CursoController::crear');
 $routes->post('/admin/cursos/guardar', 'adminCrud\CursoController::guardar');
 $routes->get('/admin/cursos/editar/(:num)', 'adminCrud\CursoController::editar/$1');
-$routes->post('/admin/cursos/actualizar/(:num)', 'adminCrud\CursoController::actualizar/$1');
+$routes->post('/admin/cursos/actualizar/', 'adminCrud\CursoController::actualizar/$1');
 $routes->get('/admin/cursos/eliminar/(:num)', 'adminCrud\CursoController::eliminar/$1');
 
 

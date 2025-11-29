@@ -45,7 +45,13 @@ class AsignacionEstuController extends BaseController
         $cursoModel = new CursoModel();
 
         $data = [
-            'estudiantes' => $estudianteModel->where('colegio_id', $this->colegio_id)->findAll(),
+            // CORRECCIÓN: unir con usuario para poder filtrar por usuario.colegio_id
+            'estudiantes' => $estudianteModel
+                                ->select('estudiante.*, usuario.primer_nombre, usuario.primer_apellido')
+                                ->join('usuario', 'usuario.id_usuario = estudiante.id_estudiante')
+                                ->where('usuario.colegio_id', $this->colegio_id)
+                                ->findAll(),
+
             'cursos'      => $cursoModel->where('estado', 'activo')
                                        ->where('colegio_id', $this->colegio_id)
                                        ->findAll()
@@ -76,7 +82,14 @@ class AsignacionEstuController extends BaseController
 
         return view('admin/secciones/crud/estudianteCurso/editar', [
             'registro'    => $registro,
-            'estudiantes' => $estudianteModel->where('colegio_id', $this->colegio_id)->findAll(),
+
+            // CORRECCIÓN: idem, unir con usuario para filtrar por colegio
+            'estudiantes' => $estudianteModel
+                                ->select('estudiante.*, usuario.primer_nombre, usuario.primer_apellido')
+                                ->join('usuario', 'usuario.id_usuario = estudiante.id_estudiante')
+                                ->where('usuario.colegio_id', $this->colegio_id)
+                                ->findAll(),
+
             'cursos'      => $cursoModel->where('estado','activo')
                                        ->where('colegio_id', $this->colegio_id)
                                        ->findAll()

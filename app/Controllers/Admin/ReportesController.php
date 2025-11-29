@@ -50,7 +50,7 @@ class ReportesController extends Controller
             'ID', 'Colegio', 'Rol', 'Primer Nombre', 'Segundo Nombre',
             'Primer Apellido', 'Segundo Apellido', 'Tipo Doc', 'Documento',
             'Username', 'Correo', 'Teléfono', 'Dirección', 'Nacimiento',
-            'Estado', 'Fecha Ingreso'
+            'Fecha Ingreso', 'Estado'
         ];
 
         $col = 1;
