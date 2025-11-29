@@ -1,0 +1,92 @@
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    gap: 15px;
+    margin: 20px 0 0 0;
+    justify-content: start;
+}
+
+.curso-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.cursos-container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+
+.curso-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+
+/* Header */
+.curso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+
+.curso-nombre {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+.curso-estado {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+
+/* Descripción */
+.curso-descripcion {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Footer */
+.curso-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Botón */
+.curso-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem;
+    background: #2563eb;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.25s ease;
+}
+
+
+.curso-button:hover {
+    background: #1d4ed8;
+}

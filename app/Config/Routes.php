@@ -71,3 +71,5 @@ $routes->group('admin', ['filter' => 'auth:administrador'], function($routes) {
     $routes->get('asignaciones/eliminar/(:num)/(:num)', 'Admin\AsignacionEstuController::eliminar/$1/$2');
 
 });
+
+$routes->get('estudiante/cursos', 'Estudiante\CursoController::index');
