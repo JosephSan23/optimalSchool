@@ -20,7 +20,7 @@
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="#planes">Planes</a></li>
+                    <!-- <li><a href="#planes">Planes</a></li> -->
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <section class="planes" id="planes">
+    <!-- <section class="planes" id="planes">
         <div class="planes-contenedor">
             <h2>Planes</h2>
             <p class="lead">Un solo plan, todas las funcionalidades. Sin complicaciones.</p>
@@ -121,7 +121,7 @@
                 <a href="#contacto" class="btn-adquirir">Adquirir</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="contacto" id="contacto">
         <div class="contacto-contenedor">
