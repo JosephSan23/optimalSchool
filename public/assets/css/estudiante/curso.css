@@ -202,8 +202,7 @@
     background-color: #185d85;
 }
 
-/* Responsivo para pantallas pequeñas */
-@media (max-width: 400px) {
+/* Responsivo para pantallas pequeñas @media (max-width: 400px) {
     .modal-content {
         padding: 20px;
     }
@@ -220,4 +219,4 @@
         width: 100%;
         text-align: center;
     }
-}
+} */
