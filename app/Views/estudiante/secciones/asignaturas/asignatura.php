@@ -1,13 +1,15 @@
 <?= $this->extend('estudiante/layout') ?>
 
 <?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/estudiante/asignatura.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/estudiante/asignatura.css?v=' . time()) ?>">
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 
 <div class="subjects-container">
-    <h1 class="title">Mis Materias</h1>
+    <div class="title-wrapper">
+        <h1 class="title">Mis Materias</h1>
+    </div>
 
     <div class="subjects-grid">
 
