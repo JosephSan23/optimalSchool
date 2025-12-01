@@ -18,7 +18,6 @@ class LoginController extends Controller
 
         $correoUsuario = trim($this->request->getPost('correo_usuario'));
         $password      = trim($this->request->getPost('contrasena'));
-        $colegio       = $this->request->getPost('colegio');
 
         // Buscar usuario por correo o username
         $usuario = $usuarioModel
@@ -38,11 +37,6 @@ class LoginController extends Controller
         // Validación que acepta hash y texto plano
         if (!password_verify($passIngresada, $passBD) && $passIngresada !== $passBD) {
              return redirect()->to('/login')->with('error', 'Contraseña incorrecta.');
-        }
-
-        // Verificar colegio
-        if ($usuario['colegio_id'] != $colegio) {
-            return redirect()->to('/login')->with('error', 'No pertenece a este colegio.');
         }
 
         // Crear sesión

@@ -41,7 +41,7 @@
                             required>
                     </div>
 
-                    <div class="row-inputs">
+                    <!-- <div class="row-inputs">
                         <div class="input-group">
                             <label for="colegio">Colegio</label>
                             <select id="colegio" name="colegio" required>
@@ -52,7 +52,7 @@
                             </select>
                         </div>
 
-                    </div>
+                    </div> -->
 
                     <div class="btn-wrapper">
                         <button type="submit">Iniciar sesión</button>

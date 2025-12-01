@@ -15,7 +15,7 @@ class Administrador extends BaseController
     }
     public function index()
     {
-        return view('admin/layout');
+        return view('admin/secciones/inicio');
                 
     }
 }

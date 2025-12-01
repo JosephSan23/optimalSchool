@@ -22,6 +22,7 @@ $routes->get('/acudiente', 'AcudienteController::index', ['filter' => 'auth:acud
 //Rutas administrador con filtro de autenticación
 $routes->group('admin', ['filter' => 'auth:administrador'], function($routes) {
 
+
     // Estudiantes CRUD
     $routes->get('estudiantes', 'adminCrud\Estudiante::index');
     $routes->get('estudiantes/crear', 'adminCrud\Estudiante::crear');
