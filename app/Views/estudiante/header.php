@@ -8,7 +8,7 @@
     <div class="usuario-info">
 
         <div class="user-text">
-            <span><strong><?= session()->get('nombre') ?></strong><br></span>
+            <span><strong><?= session()->get('nombre') ?></strong></span>
             <small><?= ucfirst(session()->get('rol')) ?></small>
         </div>
 

@@ -73,3 +73,4 @@ $routes->group('admin', ['filter' => 'auth:administrador'], function($routes) {
 });
 
 $routes->get('estudiante/cursos', 'Estudiante\CursoController::index');
+$routes->get('estudiante/asignaturas', 'Estudiante\AsignaturaController::index');

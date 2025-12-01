@@ -1,0 +1,107 @@
+.subjects-container {
+    padding: 40px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #083d6e;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.subject-card {
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.subject-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.subject-icon-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.subject-title {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #002f61;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subject-description {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.subject-profesor {
+    display: block;
+    text-align: center;
+    color: #001f3f;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.subject-button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: #28303a;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: background .3s;
+}
+
+.subject-button:hover {
+    background: #00509d;
+}
+
+.color-quimica {
+    background: #CDE8FF;
+}
+
+.color-historia {
+    background: #FFE4C2;
+}
+
+.color-matematicas {
+    background: #E1FFC9;
+}
+
+.color-ingles {
+    background: #F2D7FF;
+}
+
+.color-tecnologia {
+    background: #D8F7FF;
+}
+
+.color-educacionfisica {
+    background: #DFFFD8;
+}
