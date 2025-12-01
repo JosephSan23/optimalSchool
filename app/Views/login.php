@@ -47,7 +47,7 @@
                             <select id="colegio" name="colegio" required>
                                 <option value="">Selecciona tu colegio</option>
                                 <option value="1">San Gabriel</option>
-                                <option value="2">Los Pinos</option>
+                                <option value="2">La Poli</option>
                                 <option value="3">La Salle</option>
                             </select>
                         </div>

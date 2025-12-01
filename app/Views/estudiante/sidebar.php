@@ -7,8 +7,8 @@
         <ul>
             <li><a href="<?= base_url('estudiante') ?>"><i class="fa-solid fa-house"></i>Inicio</a></li>
             <li><a href="<?= base_url('estudiante/cursos') ?>"><i class="fa-solid fa-chalkboard"></i>Cursos</a></li>
-            <li><a href="<?= base_url('estudiante/asignaturas') ?>"><i class="fa-solid fa-book"></i>Materias</a>
-            <li><a href="<?= base_url('estudiante/horarios') ?>"><i class="fa-solid fa-calendar-alt"></i>Horarios</a>
+            <li><a href="<?= base_url('estudiante/asignaturas') ?>"><i class="fa-solid fa-book"></i>Asignaturas</a>
+            <li><a href="<?= base_url('estudiante/horarios') ?>"><i class="fa-solid fa-calendar-alt"></i>Horario</a>
 
             </li>
         </ul>

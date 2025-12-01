@@ -1,0 +1,117 @@
+.horario-container {
+    width: 100%;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.titulo-horario {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    color: #063659;
+    font-weight: bold;
+}
+
+.horario-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.horario-dia h3 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 22px;
+    color: #063659;
+}
+
+.hora-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform .2s;
+    border-left: 6px solid #063659;
+    /* color base por si una clase no tiene color */
+}
+
+.hora-card:hover {
+    transform: translateY(-4px);
+}
+
+.hora {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.materia {
+    display: block;
+    font-size: 17px;
+    margin: 6px 0;
+    font-weight: bold;
+    color: #222;
+}
+
+.hora-card a {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #063659;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hora-card a:hover {
+    text-decoration: underline;
+}
+
+.math {
+    border-left: 6px solid #4a90e2;
+}
+
+.spanish {
+    border-left: 6px solid #e67e22;
+}
+
+.tech {
+    border-left: 6px solid #16a085;
+}
+
+.english {
+    border-left: 6px solid #9b59b6;
+}
+
+.chemistry {
+    border-left: 6px solid #c0392b;
+}
+
+.history {
+    border-left: 6px solid #c55b00;
+}
+
+.science {
+    border-left: 6px solid #00a86b;
+}
+
+.art {
+    border-left: 6px solid #ffd60a;
+}
+
+.sports {
+    border-left: 6px solid #1e90ff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .horario-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .horario-grid {
+        grid-template-columns: 1fr;
+    }
+}
