@@ -21,7 +21,7 @@
 
             <div class="form-grupo">
                 <label>Grado:</label>
-                <input type="text" name="grado" required>
+                <input type="number" name="grado" required>°
             </div>
 
             <div class="form-grupo">

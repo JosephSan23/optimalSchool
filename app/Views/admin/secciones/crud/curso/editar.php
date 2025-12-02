@@ -23,7 +23,7 @@
 
             <div class="form-grupo">
                 <label>Grado:</label>
-                <input type="text" name="grado" value="<?= esc($curso['grado']); ?>" required>
+                <input type="number" name="grado" value="<?= esc($curso['grado']); ?>" required>°
             </div>
 
             <div class="form-grupo">

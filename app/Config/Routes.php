@@ -52,7 +52,7 @@ $routes->group('admin', ['filter' => 'auth:administrador'], function($routes) {
     $routes->get('cursos/crear', 'adminCrud\CursoController::crear');
     $routes->post('cursos/guardar', 'adminCrud\CursoController::guardar');
     $routes->get('cursos/editar/(:num)', 'adminCrud\CursoController::editar/$1');
-    $routes->post('cursos/actualizar/(:num)', 'adminCrud\CursoController::actualizar/$1');
+    $routes->post('cursos/actualizar/', 'adminCrud\CursoController::actualizar/$1');
     $routes->get('cursos/eliminar/(:num)', 'adminCrud\CursoController::eliminar/$1');
 
     // Reportes
@@ -73,6 +73,7 @@ $routes->group('admin', ['filter' => 'auth:administrador'], function($routes) {
 
 });
 
-$routes->get('estudiante/cursos', 'Estudiante\CursoController::index');
+$routes->get('estudiante/cursos', 'Estudiante\EstudianteCursoController::index');
+$routes->get('estudiante/cursos/(:num)', 'Estudiante\EstudianteCursoController::detalle/$1');
 $routes->get('estudiante/asignaturas', 'Estudiante\AsignaturaController::index');
 $routes->get('estudiante/horarios', 'Estudiante\HorarioEstuController::index');

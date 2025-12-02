@@ -36,7 +36,7 @@
                 <tr>
                     <td><?= esc($c['id_curso']); ?></td>
                     <td><?= esc($c['nombre_curso']); ?></td>
-                    <td><?= esc($c['grado']); ?></td>
+                    <td><?= esc($c['grado']); ?>°</td>
                     <td><?= esc($c['capacidad_maxima']); ?></td>
 
                     <td>
