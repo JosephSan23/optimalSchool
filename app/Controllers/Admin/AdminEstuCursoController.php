@@ -63,7 +63,7 @@ class AdminEstuCursoController extends BaseController
             'id_estudiante' => $this->request->getPost('id_estudiante'),
             'id_curso'      => $this->request->getPost('id_curso'),
             'estado'        => 'activo',
-            'fecha_inscripcion' => date('Y-m-d'),
+            'fecha_inscripcion' => date('Y-m-d H:i:s'),
         ];
 
         // Validar estudiante que pertenezca al colegio

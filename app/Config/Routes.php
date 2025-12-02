@@ -62,14 +62,14 @@ $routes->group('admin', ['filter' => 'auth:administrador'], function($routes) {
     $routes->get('reportes/exportarA', 'Admin\ReportesController::exportarAcudientes');
 
     // Asignaciones
-    $routes->get('asignaciones', 'Admin\AsignacionEstuController::index');
-    $routes->get('asignaciones/crear', 'Admin\AsignacionEstuController::crear');
-    $routes->post('asignaciones/guardar', 'Admin\AsignacionEstuController::guardar');
+    $routes->get('asignaciones', 'Admin\AdminEstuCursoController::index');
+    $routes->get('asignaciones/crear', 'Admin\AdminEstuCursoController::crear');
+    $routes->post('asignaciones/guardar', 'Admin\AdminEstuCursoController::guardar');
 
-    $routes->get('asignaciones/editar/(:num)/(:num)', 'Admin\AsignacionEstuController::editar/$1/$2');
-    $routes->post('asignaciones/actualizar/(:num)/(:num)', 'Admin\AsignacionEstuController::actualizar/$1/$2');
+    $routes->get('asignaciones/editar/(:num)/(:num)', 'Admin\AdminEstuCursoController::editar/$1/$2');
+    $routes->post('asignaciones/actualizar/(:num)/(:num)', 'Admin\AdminEstuCursoController::actualizar/$1/$2');
 
-    $routes->get('asignaciones/eliminar/(:num)/(:num)', 'Admin\AsignacionEstuController::eliminar/$1/$2');
+    $routes->get('asignaciones/eliminar/(:num)/(:num)', 'Admin\AdminEstuCursoController::eliminar/$1/$2');
 
 });
 

@@ -1,35 +1,42 @@
 <?= $this->extend('estudiante/layout') ?>
 
-<?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/estudiante/curso.css?v=' . time()) ?>">
-<?= $this->endSection() ?>
-
 <?= $this->section('content') ?>
-<div class=" cursos-container">
-    <h1 class="titulo-cursos">Mis Cursos</h1>
 
+<div class="content-box">
 
-    <div class="cursos-grid">
-        <!-- Curso individual (plantilla) -->
+    <h2>Mis Cursos Asignados</h2>
+    <hr>
+
+    <?php if (empty($cursos)): ?>
+    <p class="alert alert-warning">Aún no tienes cursos asignados.</p>
+    <?php else: ?>
+
+    <div class="lista-cursos">
+
+        <?php foreach ($cursos as $c): ?>
         <div class="curso-card">
-            <div class="curso-header">
-                <h2 class="curso-nombre">Nombre del Curso</h2>
-                <span class="curso-estado">Activo</span>
-            </div>
 
+            <h3><?= esc($c['nombre_curso']) ?></h3>
 
-            <p class="curso-descripcion">Descripción breve del curso o información del profesor.</p>
+            <p><strong>Descripción:</strong> <?= esc($c['descripcion']) ?></p>
+            <p><strong>Grado:</strong> <?= esc($c['grado']) ?></p>
+            <p><strong>Estado:</strong>
+                <span class="estado <?= $c['estado'] ?>">
+                    <?= ucfirst($c['estado']) ?>
+                </span>
+            </p>
 
+            <a href="<?= base_url('estudiante/cursos/detalle/' . $c['id_curso']) ?>" class="btn-ver">
+                Ver Detalles
+            </a>
 
-            <div class="curso-footer">
-                <span class="curso-profesor">Profesor: John Doe</span>
-                <span class="curso-grado">Grado: 10°</span>
-            </div>
-
-
-            <a href="#" class="curso-button">Entrar al curso</a>
         </div>
+        <?php endforeach; ?>
+
     </div>
+
+    <?php endif; ?>
+
 </div>
 
 <div id="courseModal" class="modal-overlay">
