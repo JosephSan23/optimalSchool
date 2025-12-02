@@ -66,14 +66,14 @@ class AdminEstuCursoController extends BaseController
             'fecha_inscripcion' => date('Y-m-d'),
         ];
 
-        // Validar estudiante pertenece al colegio
+        // Validar estudiante que pertenezca al colegio
         $estudiante = model('EstudianteModel')
             ->join('usuario', 'usuario.id_usuario = estudiante.id_estudiante')
             ->where('usuario.colegio_id', $this->colegio_id)
             ->where('estudiante.id_estudiante', $data['id_estudiante'])
             ->first();
 
-        // Validar curso pertenece al colegio
+        // Validar curso que pertenezca al colegio
         $curso = model('CursoModel')
             ->where('colegio_id', $this->colegio_id)
             ->where('id_curso', $data['id_curso'])
