@@ -93,6 +93,75 @@ class AdminEstuCursoController extends BaseController
         return redirect()->to(base_url('/admin/asignaciones'))
                          ->with('success', 'Asignación creada correctamente.');
     }
+    public function editar($idEstudiante, $idCurso)
+{
+    $model = new EstudianteCursoModel();
+    $estudianteModel = new EstudianteModel();
+    $cursoModel = new CursoModel();
+
+    // Traer el registro a editar
+    $registro = $model
+        ->where('id_estudiante', $idEstudiante)
+        ->where('id_curso', $idCurso)
+        ->first();
+
+    if (!$registro) {
+        return redirect()->back()->with('error', 'Asignación no encontrada.');
+    }
+
+    // Traer los estudiantes del colegio
+    $estudiantes = $estudianteModel
+        ->select('estudiante.*, usuario.primer_nombre, usuario.primer_apellido')
+        ->join('usuario', 'usuario.id_usuario = estudiante.id_estudiante')
+        ->where('usuario.colegio_id', $this->colegio_id)
+        ->findAll();
+
+    // Traer cursos del colegio
+    $cursos = $cursoModel
+        ->where('colegio_id', $this->colegio_id)
+        ->findAll();
+
+    $data = [
+        'registro' => $registro,
+        'estudiantes' => $estudiantes,
+        'cursos' => $cursos,
+    ];
+
+    return view('admin/secciones/crud/estudianteCurso/editar', $data);
+    }
+
+    public function actualizar($idEstudiante, $idCurso)
+{
+    $model = new EstudianteCursoModel();
+
+    $nuevosDatos = [
+        'id_estudiante' => $this->request->getPost('id_estudiante'),
+        'id_curso'      => $this->request->getPost('id_curso'),
+        'estado'        => $this->request->getPost('estado'),
+    ];
+
+    // Verificar que pertenece al colegio
+    $validar = $model
+        ->join('estudiante', 'estudiante.id_estudiante = estudiante_curso.id_estudiante')
+        ->join('usuario', 'usuario.id_usuario = estudiante.id_estudiante')
+        ->where('usuario.colegio_id', $this->colegio_id)
+        ->where('estudiante_curso.id_estudiante', $idEstudiante)
+        ->where('estudiante_curso.id_curso', $idCurso)
+        ->first();
+
+    if (!$validar) {
+        return redirect()->back()->with('error', 'Acción no permitida.');
+    }
+
+    // Actualizar
+    $model->where('id_estudiante', $idEstudiante)
+          ->where('id_curso', $idCurso)
+          ->set($nuevosDatos)
+          ->update();
+
+    return redirect()->to(base_url('admin/asignaciones'))
+                     ->with('success', 'Asignación actualizada correctamente.');
+}
 
     public function retirar($idEstudiante, $idCurso)
     {
