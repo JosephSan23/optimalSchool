@@ -24,7 +24,8 @@ class EstudianteCursoController extends BaseController
                 estudiante_curso.*,
                 curso.nombre_curso,
                 curso.descripcion,
-                curso.grado
+                curso.grado,
+                curso.estado AS estado_curso
             ')
             ->join('curso', 'curso.id_curso = estudiante_curso.id_curso')
             ->join('estudiante', 'estudiante.id_estudiante = estudiante_curso.id_estudiante')
@@ -32,7 +33,10 @@ class EstudianteCursoController extends BaseController
             ->where('usuario.id_usuario', $this->id_estudiante)
             ->where('usuario.colegio_id', $this->colegio_id)
             ->where('estudiante_curso.estado', 'activo')
+            // ->where('curso.estado', 'activo')
             ->findAll();
+
+            
 
         return view('estudiante/secciones/cursos/curso', $data);
     }

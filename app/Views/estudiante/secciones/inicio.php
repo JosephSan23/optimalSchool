@@ -27,5 +27,7 @@
             <p class="number">96%</p>
         </div>
     </div>
+
+
 </div>
 <?= $this->endSection() ?>

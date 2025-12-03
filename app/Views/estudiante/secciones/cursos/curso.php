@@ -17,7 +17,7 @@
             <div class="curso-header">
                 <h2 class="curso-nombre"><?= esc($c['nombre_curso']) ?></h2>
                 <span class="curso-estado">
-                    <?= esc(ucfirst($c['estado'])) ?>
+                    <?= esc(ucfirst($c['estado_curso'])) ?>
                 </span>
             </div>
 
