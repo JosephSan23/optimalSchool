@@ -1,7 +1,7 @@
 <?= $this->extend('estudiante/layout') ?>
 
 <?= $this->section('styles') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/estudiante/curso.css?v=' . time()) ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/estudiante/inicio.css?v=' . time()) ?>">
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
