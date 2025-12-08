@@ -5,29 +5,29 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="dashboard-container">
+<section class="estado-academico">
+    <h2>Estado Academico</h2>
+
     <div class="cards">
         <div class="card">
-            <h3>Estudiantes</h3>
-            <p class="number">325</p>
-        </div>
-
-        <div class="card">
-            <h3>Estudiantes</h3>
-            <p class="number">325</p>
+            <h3>Calificaciones</h3>
+            <p>Promedio 4.5</p>
         </div>
 
         <div class="card">
             <h3>Tareas Pendientes</h3>
-            <p class="number">12</p>
+            <p>2 Tareas sin entregar</p>
         </div>
 
         <div class="card">
-            <h3>Asistencias Hoy</h3>
-            <p class="number">96%</p>
+            <h3>Asistencia</h3>
+            <p>95% del mes</p>
+        </div>
+
+        <div class="card">
+            <h3>Disciplina</h3>
+            <p>Sin anotaciones</p>
         </div>
     </div>
-
-
-</div>
+</section>
 <?= $this->endSection() ?>
