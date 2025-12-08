@@ -14,7 +14,7 @@ class EstudianteController extends BaseController
     }
     public function index()
     {
-        return view('estudiante/layout');
+        return view('estudiante/secciones/inicio');
     }
 }
 ?>
