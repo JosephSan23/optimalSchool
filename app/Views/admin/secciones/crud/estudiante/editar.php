@@ -48,7 +48,7 @@
 
             <div class="form-grupo">
                 <label>Número Documento:</label>
-                <input type="text" name="documento" value="<?= esc($estudiante['documento']) ?>" required>
+                <input type="number" name="documento" value="<?= esc($estudiante['documento']) ?>" required>
             </div>
 
             <div class="form-grupo">

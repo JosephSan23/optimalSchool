@@ -51,7 +51,7 @@
 
             <div class="form-grupo">
                 <label>Número de documento:</label>
-                <input type="text" name="documento" required>
+                <input type="number" name="documento" required>
             </div>
 
             <div class="form-grupo">

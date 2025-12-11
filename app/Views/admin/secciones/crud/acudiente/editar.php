@@ -49,7 +49,7 @@
 
             <div class="form-grupo">
                 <label>Número Documento:</label>
-                <input type="text" name="documento" value="<?= esc($acudiente['documento']) ?>" required>
+                <input type="number" name="documento" value="<?= esc($acudiente['documento']) ?>" required>
             </div>
 
             <div class="form-grupo">
