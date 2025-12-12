@@ -99,3 +99,14 @@
 </div>
 
 <?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+validarFecha(
+    "fecha_nacimiento",
+    "1970-01-01",
+    "2008-12-31",
+    "La fecha de nacimiento no está dentro del rango permitido"
+);
+</script>
+<?= $this->endSection() ?>

@@ -6,10 +6,21 @@ function validarFecha(inputName, min, max, mensaje) {
         input.min = min;
         input.max = max;
 
+        input.addEventListener("input", function () {
+            if (input.value < min || input.value > max) {
+                input.setCustomValidity(mensaje);
+            } else {
+                input.setCustomValidity(""); // limpia el error
+            }
+        });
+
         input.form.addEventListener("submit", function (e) {
             if (input.value < min || input.value > max) {
+                input.setCustomValidity(mensaje);
+                input.reportValidity();
                 e.preventDefault();
-                alert(mensaje);
+            } else {
+                input.setCustomValidity(""); // limpia el error
             }
         })
     })

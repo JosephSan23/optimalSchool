@@ -115,7 +115,7 @@ validarFecha(
     "fecha_ingreso",
     "2010-01-01",
     "<?= date('Y-m-d') ?>",
-    "La fecha de ingreso no puede ser futura"
+    "La fecha de ingreso no puede ser futura ni antes del 2010"
 );
 </script>
 <?= $this->endSection() ?>
