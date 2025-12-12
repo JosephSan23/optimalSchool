@@ -25,6 +25,8 @@
         </div>
     </div>
 
+    <script src="<?= base_url('assets/js/validaciones.js?v=' . time()) ?>"></script>
+    <?= $this->renderSection('scripts') ?>
 </body>
 
 </html>

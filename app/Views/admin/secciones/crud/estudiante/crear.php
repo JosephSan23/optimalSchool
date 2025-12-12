@@ -101,3 +101,21 @@
 </div>
 
 <?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+validarFecha(
+    "fecha_nacimiento",
+    "1970-01-01",
+    "2020-12-31",
+    "La fecha de nacimiento no está dentro del rango permitido"
+);
+
+validarFecha(
+    "fecha_ingreso",
+    "2010-01-01",
+    "<?= date('Y-m-d') ?>",
+    "La fecha de ingreso no puede ser futura"
+);
+</script>
+<?= $this->endSection() ?>
