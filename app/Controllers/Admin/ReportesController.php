@@ -47,29 +47,34 @@ class ReportesController extends Controller
 
         // Encabezados del Excel
         $encabezados = [
-            'ID', 'Colegio', 'Rol', 'Primer Nombre', 'Segundo Nombre',
+            'Rol', 'Primer Nombre', 'Segundo Nombre',
             'Primer Apellido', 'Segundo Apellido', 'Tipo Doc', 'Documento',
             'Username', 'Correo', 'Teléfono', 'Dirección', 'Nacimiento',
             'Fecha Ingreso', 'Estado'
         ];
 
-        $col = 1;
+        $columnas = [
+            'rol', 'primer_nombre', 'segundo_nombre', 'primer_apellido', 'segundo_apellido',
+            'tipo_documento', 'documento', 'username', 'correo', 'telefono', 'direccion', 'fecha_nacimiento', 'fecha_ingreso', 'estado'
+        ];
+
+       $col = 1;
         foreach ($encabezados as $titulo) {
-            $cell = Coordinate::stringFromColumnIndex($col) . '1';
-            $sheet->setCellValue($cell, $titulo);
-            $col++;
+        $cell = Coordinate::stringFromColumnIndex($col) . '1';
+        $sheet->setCellValue($cell, $titulo);
+        $col++;
         }
 
-        // Datos
+         // Llenar los datos SIN CORRERSE
         $fila = 2;
         foreach ($estudiantes as $estu) {
-            $col = 1;
-            foreach ($estu as $valor) {
-                $cell = Coordinate::stringFromColumnIndex($col) . $fila;
-                $sheet->setCellValue($cell, $valor);
-                $col++;
-            }
-            $fila++;
+        $col = 1;
+        foreach ($columnas as $campo) {
+            $cell = Coordinate::stringFromColumnIndex($col) . $fila;
+            $sheet->setCellValue($cell, $estu[$campo]);
+            $col++;
+        }
+        $fila++;
         }
 
         // Descargar archivo
